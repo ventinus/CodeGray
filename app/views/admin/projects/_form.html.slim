@@ -17,8 +17,10 @@
     - if f.object.image.present?
       = image_tag(f.object.image.remote_url, width: '300px')
   .classic-form__field
-    = f.label :featured
-    = f.text_field :featured
+    = f.label :featured_true, 'Featured'
+    = f.radio_button :featured, true
+    = f.label :featured_false, 'Not Featured'
+    = f.radio_button :featured, false
   .classic-form__field
     = f.label :company_id, 'Company'
     = f.select :company_id, options_for_select(@companies.collect{ |c| [c.name, c.id] })

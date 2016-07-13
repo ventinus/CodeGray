@@ -9,7 +9,7 @@ class InquiriesController < ApplicationController
 
       mg_client = Mailgun::Client.new ENV['API_KEY']
       message_params = {:from    => ENV['MG_USERNAME'],
-                        :to      => 'jonathanceddy@gmail.com',
+                        :to      => ['jonathanceddy@gmail.com', 'jgray@codegray.co'],
                         :subject => 'New CodeGray Inquiry',
                         :text    => message}
       mg_client.send_message ENV['DOMAIN'], message_params

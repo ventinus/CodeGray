@@ -1,0 +1,12 @@
+section#projects.main-section.js-full-section
+  .section-hdg
+    h2.section-hdg__title.font-open-sans.type-title Projects
+  .section-max-width.section-max-width--lg
+    ul.projects-list
+      - 100.times do
+        - @projects.each do |project|
+          li.projects-list__piece.projects-list__item-1of2.projects-list__item-1of3--sm.projects-list__item-1of4--md
+            = link_to project.url, class: 'project-tile js-project-link' do |link|
+              .project-tile__inner.font-open-sans.type--uppercase.type--8
+                p.project-tile__inner__text = project.name
+                = image_tag project.image.remote_url, class: 'project-tile__inner__img'

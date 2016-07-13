@@ -1,0 +1,41 @@
+#nav {
+  display: inline-block;
+
+  .nav__list {
+
+  }
+
+  .nav__list__item + .nav__list__item {
+    margin-left: 5px;
+  }
+
+  .nav__list__item__link {
+    color: $black;
+    padding: 11px 20px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all $default-animation;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      height: 4px;
+      left: 0%;
+      right: 100%;
+      background-color: $grey;
+      transition: all $default-animation;
+    }
+
+    &:hover,
+    &.is-active {
+      &:after {
+        right: 0;
+      }
+    }
+
+    &:hover { color: $grey !important; }
+    &:visited { color: $black; }
+  }
+}

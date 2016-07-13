@@ -1,0 +1,19 @@
+#home {
+  .home__left,
+  .home__right {
+    top: 0;
+    width: 50%;
+    height: 100vh;
+  }
+
+  .home__left {
+    left: 0;
+    transform: translate(-100%, 0);
+  }
+
+  .home__right {
+    right: 0;
+    left: auto;
+    transform: translate(100%, 0);
+  }
+}

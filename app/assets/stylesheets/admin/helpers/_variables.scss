@@ -1,0 +1,100 @@
+  //  ======================================================================================================
+  //
+  //  Variables
+  //
+  //  ======================================================================================================
+
+  //  Responsive Breakpoints
+  //  --------------------------------------------------
+  $break-sm:                580px  !default;
+  $break-md:                768px  !default;
+  $break-lg:                1024px !default;
+  $break-xl:                1240px !default;
+
+  //  Color
+  //  --------------------------------------------------
+  //  _primary___________________________________
+  $black:                   #000000 !default;
+  $white:                   #ffffff !default;
+  $grey:                    #A1A1A1 !default;
+  $grey-1:                  #CDCDCD !default;
+  $grey-2:                  #222222 !default;
+  $grey-3:                  #5A5A5A !default;
+  $grey-light:              #F3F3F3 !default;
+
+  //  _secondary_________________________________
+  $mint-green:              #a2faa3 !default;
+  $shadow-green:            #92c9b1 !default;
+  $kashmir-blue:            #4f759b !default;
+  $smoky-purple:            #5d5179 !default;
+  $tawny-port:              #571f4e !default;
+  $color-selections:        $mint-green, $shadow-green, $kashmir-blue, $smoky-purple, $tawny-port;
+
+  //  _notifications_____________________________
+  $error-red:               #fd0902 !default;
+  $transparent:             rgba(0,0,0,0) !default;
+
+  //  Default Color Settings
+  //  --------------------------------------------------
+  $body-bg:                 $white;
+  $default-txt-color:       $grey-2;
+  $placeholder-txt-color:   rgba(0,0,0,0.7);
+  $highlight:               $grey;
+
+
+  //  Font Families
+  //  --------------------------------------------------
+  $font-jura:               "Jura";
+  $font-OS-Light:           "OpenSans-Light";
+  $font-OS-Regular:         "OpenSans-Regular";
+  $font-OS-Semibold:        "OpenSans-Semibold";
+  $font-OS-Bold:            "OpenSans-Bold";
+  $font-OS-ExtraBold:       "OpenSans-ExtraBold";
+
+  //  Font Stacks
+  //  --------------------------------------------------
+  $font-family-default: $font-OS-Regular, $font-jura, sans-serif;
+
+
+  //  Type Sizes (use rem mixin to apply)
+  //  --------------------------------------------------
+  $font-size-base:          16px  !default;
+  $font-size-root:          62.5% !default;
+  $font-size-title:         7.2   !default;
+  $font-size-a:             5.0   !default;
+  $font-size-b:             3.8   !default;
+  $font-size-c:             3.3   !default;
+  $font-size-d:             2.9   !default;
+  $font-size-e:             2.6   !default;
+  $font-size-f:             2.4   !default;
+  $font-size-g:             2.0   !default;
+  $font-size-h:             1.8   !default;
+  $font-size-i:             1.6   !default;
+  $font-size-j:             1.4   !default;
+  $font-size-k:             1.3   !default;
+  $font-size-l:             1.2   !default;
+  $font-size-m:             1.1   !default;
+  $font-size-n:             1.0   !default;
+
+  //  Defaults
+  //  --------------------------------------------------
+  $font-weight-default:     normal !default;
+  $line-height-base:        1.5    !default;
+
+  //  Links
+  //  --------------------------------------------------
+  $link-color:              $black               !default;
+  $link-hover-color:        rgba($black, 0.6)    !default;
+
+  //  Spacing Defaults
+  //  --------------------------------------------------
+  $padding-default:         20px   !default;
+
+  //  Animation
+  //  --------------------------------------------------
+  $default-animation:           0.3s ease-in-out !default;
+  $default-animation-duration:  0.3s !default;
+
+  //  Site Max Width
+  //  --------------------------------------------------
+  $max-width: 1460px;

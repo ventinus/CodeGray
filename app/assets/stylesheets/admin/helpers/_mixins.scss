@@ -1,0 +1,148 @@
+// ======================================================================================================
+//
+// Mixins
+//
+// ======================================================================================================
+
+// --------------------------------------------------
+// Fonts
+// --------------------------------------------------
+@mixin declare-font-face(
+  $font-family,
+  $font-filename-woff,
+  $font-filename-ttf,
+  $font-filename-svg,
+  $font-weight : normal,
+  $font-style : normal,
+  $font-stretch : normal
+){
+  @font-face {
+    font-family: "#{$font-family}";
+    src: font-url("#{$font-filename-woff}.woff") format("woff"),
+         font-url("#{$font-filename-ttf}.ttf") format("truetype"),
+         font-url("#{$font-filename-svg}.svg##{$font-filename-svg}") format("svg");
+    font-style: $font-style;
+    font-stretch: $font-stretch;
+    font-weight: $font-weight;
+  }
+}
+
+// --------------------------------------------------
+// Utils
+// --------------------------------------------------
+
+@mixin isVisuallyHidden {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  margin: 0 !important;
+  clip: rect(1px 1px 1px 1px) !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  overflow: hidden !important;
+}
+
+@mixin cols($min: 1, $max: 12, $col-gutter: 0px, $row-gutter: 0px, $col-wrapper-name: ".cols", $col-name: ".cols__col", $breakpoint: '') {
+  #{$col-wrapper-name} > * {
+    margin-top: $row-gutter;
+    margin-left: $col-gutter;
+    font-size: initial;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+  }
+
+  #{$col-wrapper-name} > #{$col-name} {
+    width: calc(100% - #{$col-gutter});
+  }
+
+  @for $i from $min through $max {
+    @for $j from $i through $max  {
+      @if $i != $j {
+        #{$col-wrapper-name} > #{$col-name}-#{$i}of#{$j}#{$breakpoint} {
+          $col-percent: 100% * $i / $j;
+          width: calc(#{$col-percent} - #{$col-gutter});
+        }
+      }
+    }
+  }
+}
+
+
+
+// ------------------------------------------------
+// Font Styles
+// ------------------------------------------------
+@mixin font-smoothing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin truncate-text(){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// --------------------------------------------------
+// Responsive Breakpoints
+// --------------------------------------------------
+$breakpoints: (
+  'xs':  ( max-width: $break-sm - 1 ),
+  'sm':  ( min-width: $break-sm  ),
+  'md':  ( min-width: $break-md  ),
+  'lg':  ( min-width: $break-lg  ),
+  'xl':  ( min-width: $break-xl  )
+);
+
+@mixin breakpoint($name) {
+  @media #{inspect(map-get($breakpoints, $name))} {
+    @content;
+  }
+}
+
+// --------------------------------------------------
+// Keyframe
+// --------------------------------------------------
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+// --------------------------------------------------
+// Rem Calculator
+// --------------------------------------------------
+@mixin font-size($sizeValue) {
+  font-size: ($sizeValue * 10) + px;
+}
+

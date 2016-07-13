@@ -1,0 +1,40 @@
+.home__left {
+  .home-panel {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+.home__right {
+  .home-panel {
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+
+.home-panel {
+  position: absolute;
+
+  .home-panel__hdg {
+    text-align: left;
+  }
+
+  .home-panel__links {
+    display: block;
+    margin-left: -10px;
+    text-align: center;
+
+    & > * {
+      margin-left: 10px;
+    }
+  }
+}

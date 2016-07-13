@@ -1,0 +1,39 @@
+#home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  pointer-events: none;
+
+  .home__left,
+  .home__right {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    transition: transform 500ms ease-in-out;
+    pointer-events: all;
+
+    &.no-transition { transition-duration: 0s; }
+  }
+
+  .home__left {
+    top: 0;
+    transform: translate(0, -100%);
+    background-color: $grey-1;
+  }
+
+  .home__right {
+    bottom: 0;
+    transform: translate(0, 100%);
+    background-color: $white;
+    overflow-y: scroll;
+  }
+
+  &.is-visible {
+    .home__left,
+    .home__right { transform: translate(0, 0); }
+  }
+}

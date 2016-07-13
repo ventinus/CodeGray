@@ -1,0 +1,28 @@
+.projects-list {
+  display: block;
+  font-size: 0;
+  margin-left: -10px;
+  margin-top: 5px;
+
+  .projects-list__piece {
+    overflow: hidden;
+    height: 110px;
+  }
+
+
+  @each $color in $color-selections {
+    $i: index($color-selections, $color);
+    .projects-list__piece:nth-child(5n + #{$i}) {
+      background-color: $color;
+    }
+  }
+}
+
+.projects-list--home {
+  .projects-list__piece:nth-child(n + 3) {
+    display: none;
+  }
+}
+
+
+@include cols(1, 2, 10px, 10px, '.projects-list', '.projects-list__item');

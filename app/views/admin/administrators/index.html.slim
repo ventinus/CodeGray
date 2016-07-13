@@ -1,0 +1,14 @@
+= link_to 'New Administrator', new_admin_administrator_path, class: 'btn'
+table.index-table
+  thead
+    th Name
+    th Email
+    th
+  tbody
+    - @administrators.each do |admin|
+      tr
+        td= admin.full_name
+        td= admin.email
+        td.text-right
+          = edit_link(admin)
+          = delete_link(admin)

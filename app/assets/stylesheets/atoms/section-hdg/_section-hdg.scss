@@ -1,0 +1,48 @@
+.section-hdg {
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  padding-top: 40px;
+  margin-bottom: 30px;
+
+  &:after {
+    content: "";
+    display: block;
+    height: 6px;
+    width: 90%;
+    max-width: 570px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    bottom: 0;
+    background-image: -webkit-linear-gradient(
+      to right,
+      $mint-green 0%, $mint-green 20%,
+      $shadow-green 20%, $shadow-green 40%,
+      $kashmir-blue 40%, $kashmir-blue 60%,
+      $smoky-purple 60%, $smoky-purple 80%,
+      $tawny-port 80%, $tawny-port 100%
+    );
+  background-image: -o-linear-gradient(
+      to right,
+      $mint-green 0%, $mint-green 20%,
+      $shadow-green 20%, $shadow-green 40%,
+      $kashmir-blue 40%, $kashmir-blue 60%,
+      $smoky-purple 60%, $smoky-purple 80%,
+      $tawny-port 80%, $tawny-port 100%
+    );
+  background-image: linear-gradient(
+      to right,
+      $mint-green 0%, $mint-green 20%,
+      $shadow-green 20%, $shadow-green 40%,
+      $kashmir-blue 40%, $kashmir-blue 60%,
+      $smoky-purple 60%, $smoky-purple 80%,
+      $tawny-port 80%, $tawny-port 100%
+    );
+  }
+
+  .section-hdg__title {
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,16 @@
+.index-table {
+  width: 95%;
+  margin: 0 auto;
+
+  thead {
+    text-align: left;
+  }
+
+  tr + tr > td {
+    padding-top: 10px;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+}

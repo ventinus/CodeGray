@@ -1,0 +1,8 @@
+@include cols(1, 4, 10px, 10px, '.projects-list', '.projects-list__item', '--md');
+
+
+.projects-list--home {
+  .projects-list__piece:nth-child(n + 3) {
+    display: inline-block;
+  }
+}

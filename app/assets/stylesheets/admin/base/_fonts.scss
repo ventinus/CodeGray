@@ -1,0 +1,26 @@
+//  ======================================================================================================
+//
+//  Fonts: Include all file extentions
+//  Original Source: fast.fonts.net
+//
+//  ======================================================================================================
+
+// --------------------------------------------------
+// Validation
+// --------------------------------------------------
+
+@import url("https://fonts.googleapis.com/css?family=Jura:600,400");
+
+// --------------------------------------------------
+// OpenSans Fonts
+// --------------------------------------------------
+@include declare-font-face('OpenSans-Light', 'OpenSans-Light', 'OpenSans-Light', 'OpenSans-Light');
+@include declare-font-face('OpenSans-Regular', 'OpenSans-Regular', 'OpenSans-Regular', 'OpenSans-Regular');
+@include declare-font-face('OpenSans-Semibold', 'OpenSans-Semibold', 'OpenSans-Semibold', 'OpenSans-Semibold');
+@include declare-font-face('OpenSans-Bold', 'OpenSans-Bold', 'OpenSans-Bold', 'OpenSans-Bold');
+@include declare-font-face('OpenSans-ExtraBold', 'OpenSans-ExtraBold', 'OpenSans-ExtraBold', 'OpenSans-ExtraBold');
+
+// --------------------------------------------------
+// Custon Icon Font via http://icomoon.com
+// --------------------------------------------------
+// @include declare-font-face('WV-Icons', 'wv-icons', 'wv-icons', 'wv-icons', 'wv-icons', 'wv-icons');

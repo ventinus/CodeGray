@@ -1,0 +1,28 @@
+#home.is-visible
+  .home__left
+    .home-panel
+      h1.font-open-sans.type--uppercase
+        span.type--10.font-open-sans--light Personal Portfolio Site Of
+        br
+        span.type-title Jon Gray
+      .home-panel__links.font-open-sans.type--uppercase.type--8
+        = link_to 'about', '#about', class: 'link link--white js-home-link'
+        = link_to 'contact', '#contact', class: 'link link--white-filled js-home-link'
+  .home__right
+    .home-panel
+      h2.home-panel__hdg.font-open-sans.type--uppercase.type--5 Projects
+      ul.projects-list.projects-list--home
+        - @projects[0...5].each do |project|
+          li.projects-list__piece.projects-list__item-1of2
+            = link_to project.url, class: 'project-tile js-project-link' do |link|
+              .project-tile__inner.font-open-sans.type--uppercase.type--8
+                p.project-tile__inner__text = project.name
+                = image_tag project.image.remote_url, class: 'project-tile__inner__img'
+
+.page-wrapper
+  = render "pages/sections/about"
+  = render "pages/sections/contact"
+  = render "pages/sections/projects"
+
+
+

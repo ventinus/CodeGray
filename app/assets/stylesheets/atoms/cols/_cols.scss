@@ -1,0 +1,12 @@
+.cols {
+  display: block;
+  font-size: 0;
+  margin-left: -10px;
+
+  .cols__col + .cols__col {
+    margin-top: 40px;
+  }
+
+}
+
+@include cols(1, 1, 10px, 10px, '.cols', '.cols__col');

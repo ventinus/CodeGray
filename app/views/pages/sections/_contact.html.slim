@@ -1,0 +1,26 @@
+section#contact.main-section.js-full-section
+  .section-hdg
+    h2.section-hdg__title.font-open-sans.type-title Contact
+
+  .section-max-width.section-max-width--sm
+    .contact-form-wrapper
+      p.contact-form-wrapper__intro Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem doloremque, cumque repellendus ipsa maxime illum nesciunt, molestiae expedita possimus nostrum consectetur repellat magnam aspernatur sint. Cupiditate numquam illum eos voluptatem.
+      = form_for @inquiry, html: { class: 'contact-form font-jura type--7 js-contact-form' } do |f|
+        .contact-form__group
+          = f.label :email, 'email:', class: 'contact-form__group__label'
+          = f.text_field :email, class: 'contact-form__group__input contact-form__group__input--email type--9'
+        .contact-form__group
+          = f.label :name, 'name:', class: 'contact-form__group__label'
+          = f.text_field :name, class: 'contact-form__group__input contact-form__group__input--name type--9'
+        .contact-form__group
+          = f.label :message, 'message:', class: 'contact-form__group__label'
+          = f.text_area :message, class: 'contact-form__group__textarea type--9', rows: 5
+
+        = f.submit "submit", class: 'contact-form__submit'
+      .contact-success.font-jura.js-contact-form-success
+        p
+          | Thank you for your message. I'll get back to you shortly...
+          br
+          | In the meantime... enjoy this lovely kitten!
+        = image_tag 'https://placekitten.com/g/300/400', class: 'contact-success__img'
+

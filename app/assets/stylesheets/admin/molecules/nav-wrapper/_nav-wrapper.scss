@@ -1,0 +1,19 @@
+.nav-wrapper {
+  background-color: $white;
+  text-align: left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+
+  .nav-wrapper__logo {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    .nav-wrapper__logo__img {
+      width: 45px;
+    }
+  }
+}

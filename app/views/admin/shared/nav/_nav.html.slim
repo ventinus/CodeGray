@@ -1,0 +1,12 @@
+- if current_administrator.present?
+  .nav-wrapper
+    nav#nav
+      ul.nav__list
+        li.nav__list__item
+          = link_to 'Admininstrators', admin_administrators_path, class: 'nav__list__item__link is-active'
+        li.nav__list__item
+          = link_to 'Companies', admin_companies_path, class: 'nav__list__item__link'
+        li.nav__list__item
+          = link_to 'Projects', admin_projects_path, class: 'nav__list__item__link'
+    = link_to admin_root_path, class: 'nav-wrapper__logo' do |link|
+      = image_tag 'logo--sm.png', class: 'nav-wrapper__logo__img'

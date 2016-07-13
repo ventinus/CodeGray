@@ -1,0 +1,13 @@
+= link_to 'Create Project', new_admin_project_path, class: 'btn'
+table.index-table
+  thead
+    th Name
+    th
+  tbody
+    - @projects.each do |project|
+      tr
+        td= project.name
+        td.text-right
+          = publish_unpublish_link(project)
+          = edit_link(project)
+          = delete_link(project)

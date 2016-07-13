@@ -1,0 +1,32 @@
+.font-open-sans {
+  font-family: $font-OS-Regular;
+
+  &--light  { font-weight: 400; }
+  &--bold   { font-weight: 700; }
+  &--italic { font-style: italic; }
+}
+
+.font-jura {
+  font-family: $font-jura;
+}
+
+.type--uppercase { text-transform: uppercase; }
+
+.type-title {
+  @include font-size(4.2);
+}
+
+.type--1  { @include font-size($font-size-a); }
+.type--2  { @include font-size($font-size-b); }
+.type--3  { @include font-size($font-size-c); }
+.type--4  { @include font-size($font-size-d); }
+.type--5  { @include font-size($font-size-e); }
+.type--6  { @include font-size($font-size-f); }
+.type--7  { @include font-size($font-size-g); }
+.type--8  { @include font-size($font-size-h); }
+.type--9  { @include font-size($font-size-i); }
+.type--10 { @include font-size($font-size-j); }
+.type--11 { @include font-size($font-size-k); }
+.type--12 { @include font-size($font-size-l); }
+.type--13 { @include font-size($font-size-m); }
+.type--14 { @include font-size($font-size-n); }

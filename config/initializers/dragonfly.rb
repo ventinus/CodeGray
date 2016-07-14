@@ -1,4 +1,5 @@
 require 'dragonfly'
+require 'dragonfly/s3_data_store'
 
 # Configure
 Dragonfly.app.configure do
@@ -8,9 +9,19 @@ Dragonfly.app.configure do
 
   url_format "/media/:job/:name"
 
-  datastore :file,
-    root_path: Rails.root.join('public/system/dragonfly', Rails.env),
-    server_root: Rails.root.join('public')
+  if Rails.env.test? or Rails.env.development?
+    datastore :file,
+      root_path: Rails.root.join('public/system/dragonfly', Rails.env),
+      server_root: Rails.root.join('public'),
+      fog_storage_options: { path_style: true }
+  else
+    datastore :s3,
+      bucket_name: ENV['S3_BUCKET_NAME'],
+      # access_key_id: ENV['AWS_ACCESS_KEY'],
+      # secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+      # url_host: ENV['AWS_CLOUDFRONT_DISTRIBUTION'],
+      fog_storage_options: { path_style: true }
+  end
 end
 
 # Logger
@@ -24,3 +35,6 @@ if defined?(ActiveRecord::Base)
   ActiveRecord::Base.extend Dragonfly::Model
   ActiveRecord::Base.extend Dragonfly::Model::Validations
 end
+
+
+

@@ -26,6 +26,7 @@ gem 'devise'
 gem "autoprefixer-rails"
 
 gem 'dragonfly'
+gem 'dragonfly-s3_data_store'
 
 gem 'figaro'
 gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'

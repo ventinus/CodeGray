@@ -17,8 +17,8 @@ Dragonfly.app.configure do
   else
     datastore :s3,
       bucket_name: ENV['S3_BUCKET_NAME'],
-      # access_key_id: ENV['AWS_ACCESS_KEY'],
-      # secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+      access_key_id: ENV['AWS_ACCESS_KEY'],
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
       # url_host: ENV['AWS_CLOUDFRONT_DISTRIBUTION'],
       fog_storage_options: { path_style: true }
   end

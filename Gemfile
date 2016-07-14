@@ -28,6 +28,8 @@ gem "autoprefixer-rails"
 gem 'dragonfly'
 gem 'dragonfly-s3_data_store'
 
+gem 'aws-sdk', '~> 2'
+
 gem 'figaro'
 gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
 

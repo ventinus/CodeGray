@@ -12,7 +12,7 @@ Dragonfly.app.configure do
   if Rails.env.test? or Rails.env.development?
     datastore :file,
       root_path: Rails.root.join('public/system/dragonfly', Rails.env),
-      server_root: Rails.root.join('public'),
+      server_root: Rails.root.join('public')
       # fog_storage_options: { path_style: true }
   else
     datastore :s3,

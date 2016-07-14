@@ -69,7 +69,7 @@ Rails.application.configure do
     :address        => 'smtp.mailgun.org',
     :user_name      => ENV['MG_USERNAME'],
     :password       => ENV['MG_PASSWORD'],
-    :domain         => 'codegray.herokuapp.com',
+    :domain         => ENV['PROD_DOMAIN'],
     :authentication => :plain,
   }
 

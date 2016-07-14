@@ -6,7 +6,6 @@ window.ADMIN_MODULES.nav = function() {
 
   var els = {};
 
-
   var createChildren = function() {
     els.navLinks = document.querySelector('.js-nav').querySelectorAll('a');
     return;
@@ -42,7 +41,6 @@ window.ADMIN_MODULES.nav = function() {
 
   return {
     init: function() {
-      console.log('nav init')
       createChildren();
       setActiveNavItem();
       enable();

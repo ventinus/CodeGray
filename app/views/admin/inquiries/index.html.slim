@@ -1,0 +1,9 @@
+table.index-table
+  thead
+    th Name
+    th
+  tbody
+    - @inquiries.each do |inquiry|
+      tr
+        td= inquiry.name
+

@@ -47,7 +47,7 @@ Project.create([
     published: true,
     featured: true,
     featured_position: 1,
-    company_id: 3
+    company_id: 2
   },{
     name: 'Rotating Circle',
     url: 'http://ventinus.github.io/circle',
@@ -56,7 +56,7 @@ Project.create([
     published: true,
     featured: true,
     featured_position: 2,
-    company_id: 3
+    company_id: 2
   },{
     name: 'Constellation',
     url: 'http://ventinus.github.io/constellation',
@@ -64,7 +64,7 @@ Project.create([
     image_uid: 'https://unsplash.it/640/400',
     published: false,
     featured: false,
-    company_id: 3
+    company_id: 2
   },{
     name: 'Scene',
     url: 'http://ventinus.github.io/canvas-tree',
@@ -72,6 +72,6 @@ Project.create([
     image_uid: 'https://unsplash.it/640/400',
     published: false,
     featured: false,
-    company_id: 3
+    company_id: 2
   }
 ])

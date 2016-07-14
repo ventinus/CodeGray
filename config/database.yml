@@ -50,7 +50,7 @@ test: &test
 production:
   <<: *default
   database: codegray_production
-  username: b55f19865bf5ad
+  username: root
   password: <%= ENV['CODEGRAY_DATABASE_PASSWORD'] %>
 
 cucumber:

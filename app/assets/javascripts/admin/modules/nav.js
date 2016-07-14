@@ -14,6 +14,7 @@ window.ADMIN_MODULES.nav = function() {
 
   var setActiveNavItem = function() {
     currentPage = document.body.dataset.jsClass.match(/\-(.*?)\_/)[1];
+    debugger
 
     for (var i = els.navLinks.length - 1; i >= 0; i--) {
       if (els.navLinks[i].textContent.toLowerCase() === currentPage) {

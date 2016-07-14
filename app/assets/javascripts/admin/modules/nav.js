@@ -14,11 +14,11 @@ window.ADMIN_MODULES.nav = function() {
 
   var setActiveNavItem = function() {
     currentPage = document.body.dataset.jsClass.match(/\-(.*?)\_/)[1];
-    debugger
 
     for (var i = els.navLinks.length - 1; i >= 0; i--) {
       if (els.navLinks[i].textContent.toLowerCase() === currentPage) {
         els.navLinks[i].classList.add('is-active');
+        props.currentActiveIndex = i;
         i = 0;
       }
     }
@@ -42,6 +42,7 @@ window.ADMIN_MODULES.nav = function() {
 
   return {
     init: function() {
+      console.log('nav init')
       createChildren();
       setActiveNavItem();
       enable();

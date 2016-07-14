@@ -11,5 +11,6 @@
 // about supported directives.
 //
 //= require turbolinks
+//= require_tree ./modules
 //= require ./app
 //= require ./main

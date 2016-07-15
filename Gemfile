@@ -28,9 +28,6 @@ gem "autoprefixer-rails"
 gem 'dragonfly'
 gem 'dragonfly-s3_data_store'
 
-gem 'aws-sdk', '~> 2'
-# gem 'fog'
-
 gem 'figaro'
 gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
 
@@ -58,5 +55,9 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :production do
+  gem 'rack-cache', :require => 'rack/cache'
 end
 

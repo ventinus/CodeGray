@@ -25,7 +25,10 @@ class Project < ActiveRecord::Base
   validates :image_uid, presence: true
   validates_inclusion_of :published, :in => [true, false]
 
-  dragonfly_accessor :"image"
+  # validates_property :format, of: :image_uid, in: [:jpeg, :jpg, :png, :bmp, :gif], case_sensitive: false,
+  #                  message: "should be either .jpeg, .jpg, .png, .bmp, .gif", if: :image_changed?
+
+  dragonfly_accessor :image
 
   def self.published
     where(published: true)

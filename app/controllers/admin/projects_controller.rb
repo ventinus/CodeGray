@@ -21,6 +21,7 @@ class Admin::ProjectsController < Admin::ApplicationController
     if @project.save
       redirect_to admin_projects_path, notice: 'Project successfully created.'
     else
+      @companies = Company.all
       render :new
     end
   end
@@ -51,6 +52,6 @@ class Admin::ProjectsController < Admin::ApplicationController
   def project_params
     params.require(:project).permit(:name, :url, :description,
                                     :image, :retained_image, :published,
-                                    :featured, :featured_position)
+                                    :featured, :featured_position, :company_id)
   end
 end

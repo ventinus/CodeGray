@@ -13,14 +13,14 @@ Dragonfly.app.configure do
     datastore :file,
       root_path: Rails.root.join('public/system/dragonfly', Rails.env),
       server_root: Rails.root.join('public')
-      # fog_storage_options: { path_style: true }
+      fog_storage_options: { path_style: true }
   else
     datastore :s3,
       bucket_name: ENV['S3_BUCKET_NAME'],
       access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
-      # url_host: ENV['AWS_CLOUDFRONT_DISTRIBUTION'],
-      # fog_storage_options: { path_style: true }
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+      region: 'us-west-2',
+      fog_storage_options: { path_style: true }
   end
 end
 

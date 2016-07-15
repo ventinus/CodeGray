@@ -11,4 +11,5 @@ table.index-table
         td= admin.email
         td.text-right
           = edit_link(admin)
-          = delete_link(admin)
+          - unless current_administrator == admin
+            = delete_link(admin)

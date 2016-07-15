@@ -1,0 +1,21 @@
+/ TODO: add a nice button for the file and hide the default file input tag
+= form_for [:admin, @administrator], html: { class: 'classic-form' } do |f|
+  .classic-form__field
+    = f.label :first_name
+    = f.text_field :first_name, autofocus: true
+  .classic-form__field
+    = f.label :last_name
+    = f.text_field :last_name
+  .classic-form__field
+    = f.label :email
+    = f.email_field :email, required: true, input_html: { class: 'form-control' }
+  .classic-form__field
+    = f.label :password
+    = f.password_field :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { class: 'form-control' }
+  .classic-form__field
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation, required: true, hint: 'Passwords should be at least 8 charachters long and include capitals, numbers and symbols.'
+
+  .actions
+      = f.submit "Submit", class: 'btn btn--submit type--8'
+      = link_to 'Cancel', admin_administrators_path, class: 'btn type--8'

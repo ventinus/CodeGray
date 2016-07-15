@@ -33,6 +33,7 @@ class Admin::AdministratorsController < Admin::ApplicationController
   end
 
   def destroy
+    binding.pry
     if @administrator.destroy
       redirect_to admin_administrators_path, notice: "#{@administrator.full_name} was removed as an administrator."
     else

@@ -11,4 +11,4 @@ table.index-table
         td= admin.email
         td.text-right
           = edit_link(admin)
-          = delete_link(admin)
+          = link_to 'Delete', "administrators/#{admin.id}", method: :delete, class: 'btn btn-danger', title: 'Delete'

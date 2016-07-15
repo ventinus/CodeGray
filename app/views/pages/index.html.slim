@@ -14,7 +14,7 @@
       ul.projects-list.projects-list--home
         - @projects[0...5].each do |project|
           li.projects-list__piece.projects-list__item-1of2
-            = link_to project.url, class: 'project-tile js-project-link' do |link|
+            = link_to project.url, class: 'project-tile js-project-link', target: '_blank' do |link|
               .project-tile__inner.font-open-sans.type--uppercase.type--8
                 p.project-tile__inner__text = project.name
                 = image_tag project.image.remote_url, class: 'project-tile__inner__img'

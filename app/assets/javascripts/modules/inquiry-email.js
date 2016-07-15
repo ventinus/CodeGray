@@ -26,6 +26,7 @@ window.MODULES.inquiryEmail = function() {
         } else if (xmlhttp.status == 400) {
           console.log(xmlhttp.status);
         } else {
+          onSuccess();
           onError();
         }
       }

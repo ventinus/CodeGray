@@ -159,6 +159,7 @@ i { font-style: normal; }
 
 a {
   text-decoration: none;
+  transition: color $default-animation;
 }
 
 // --------------------------------------------------

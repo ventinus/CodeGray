@@ -26,6 +26,16 @@
 
   .home-panel__hdg {
     text-align: left;
+    text-decoration: underline;
+
+    a,
+    a:visited {
+      color: $black;
+    }
+
+    a:hover {
+      color: $grey;
+    }
   }
 
   .home-panel__links {

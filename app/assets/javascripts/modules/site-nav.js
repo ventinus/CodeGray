@@ -68,6 +68,8 @@ window.MODULES.siteNav = function() {
 
   var onHomeLinkClick = function(e) {
     e.preventDefault();
+    document.body.classList.remove('no-scroll');
+    document.documentElement.classList.remove('no-scroll');
 
     els.navWrapper.classList.remove('is-visible');
     props.wasNavTriggered = true;
@@ -84,8 +86,6 @@ window.MODULES.siteNav = function() {
     var target = document.querySelector(e.currentTarget.hash);
     smoothScroll.scrollTo(target);
     els.home.classList.remove('is-visible');
-    document.body.classList.remove('no-scroll');
-    document.documentElement.classList.remove('no-scroll');
     resetTriggeredProp();
     return;
   }

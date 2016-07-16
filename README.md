@@ -11,7 +11,7 @@ TODOS:
   4.5 - add checkbox to projects index page for featured or not
 - CORE SITE:
 X 1 - style nav on mobile
-  3 - contribute content
+  3 - create content
   4 - refine styles
   10 - document everything
   1.5 - add link to projects section in home (probably the already present "Projects" word)

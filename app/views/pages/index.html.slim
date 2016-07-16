@@ -10,7 +10,8 @@
         = link_to 'contact', '#contact', class: 'link link--white-filled js-home-link'
   .home__right
     .home-panel
-      h2.home-panel__hdg.font-open-sans.type--uppercase.type--5 Projects
+      h2.home-panel__hdg.font-open-sans.type--uppercase.type--5
+        = link_to 'Projects', '#projects', class: 'js-home-link'
       ul.projects-list.projects-list--home
         - @projects[0...5].each do |project|
           li.projects-list__piece.projects-list__item-1of2

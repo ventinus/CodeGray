@@ -10,7 +10,7 @@ window.MODULES.sectionHeight = function() {
   }
 
   var resizeSections = function() {
-    windowHeight = window.innerHeight - 40 + 'px';
+    var windowHeight = window.innerWidth < 580 ? window.innerHeight + 'px' : window.innerHeight - 40 + 'px';
 
     for (var i = els.sections.length - 1; i >= 0; i--) {
       els.sections[i].style.minHeight = windowHeight;

@@ -24,6 +24,8 @@ window.MODULES.siteNav = function() {
     els.navLinks = els.nav.querySelectorAll('a');
     els.highlighter = document.getElementsByClassName('js-nav-highlighter')[0];
     els.anchorLinks = document.getElementsByClassName('js-smooth-anchor');
+    els.mobileNavToggle = document.getElementsByClassName('js-nav-toggle')[0];
+    els.navWrapper = document.querySelector('.js-nav-wrapper');
     return;
   }
 
@@ -33,6 +35,7 @@ window.MODULES.siteNav = function() {
     var clickedEl = e.currentTarget;
 
     setActiveNavItem(clickedEl);
+    els.navWrapper.classList.remove('is-visible');
 
     if (clickedEl.hash) {
       props.wasNavTriggered = true;
@@ -48,6 +51,12 @@ window.MODULES.siteNav = function() {
     return;
   }
 
+  var onToggleClick = function(e) {
+    var action = els.navWrapper.classList.contains('is-visible') ? 'remove' : 'add';
+    els.navWrapper.classList[action]('is-visible');
+    return;
+  }
+
   var onAnchorLinkClick = function(e) {
     e.preventDefault();
     var target = document.querySelector(e.currentTarget.hash);
@@ -57,6 +66,8 @@ window.MODULES.siteNav = function() {
 
   var onHomeLinkClick = function(e) {
     e.preventDefault();
+
+    els.navWrapper.classList.remove('is-visible');
     props.wasNavTriggered = true;
     var correspondingNavLink = null;
     for (var i = els.navLinks.length - 1; i >= 0; i--) {
@@ -161,6 +172,7 @@ window.MODULES.siteNav = function() {
 
     props.currentLink.classList.add('is-active');
     els.highlighter.style.left = props.currentLink.offsetLeft + 'px';
+    els.highlighter.style.top = props.currentLink.offsetTop + 'px';
     els.highlighter.style.width = props.currentLink.offsetWidth + 'px';
 
     return;
@@ -180,6 +192,8 @@ window.MODULES.siteNav = function() {
     for (var i = els.anchorLinks.length - 1; i >= 0; i--) {
       els.anchorLinks[i].addEventListener('click', onAnchorLinkClick);
     }
+
+    els.mobileNavToggle.addEventListener('click', onToggleClick);
 
     props.resizeHandler = window.UTILS.Throttle(onResize, 100)
     props.scrollHandler = window.UTILS.Throttle(onScroll, 100)
@@ -208,6 +222,8 @@ window.MODULES.siteNav = function() {
     for (var i = els.anchorLinks.length - 1; i >= 0; i--) {
       els.anchorLinks[i].removeEventListener('click', onAnchorLinkClick);
     }
+
+    els.mobileNavToggle.removeEventListener('click', onToggleClick);
 
     window.removeEventListener('resize', props.resizeHandler);
     window.removeEventListener('scroll', props.scrollHandler);

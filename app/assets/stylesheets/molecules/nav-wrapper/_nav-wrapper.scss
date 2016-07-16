@@ -1,11 +1,43 @@
 .nav-wrapper {
-  background-color: $grey-2;
-  text-align: center;
+  background-color: $grey-3;
+  text-align: left;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  transform: translateX(-100%);
+  width: 210px;
   z-index: 10;
+  transition: all $default-animation;
+
+  .nav-wrapper__toggle {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 46px;
+    width: 46px;
+    background-color: rgba(255,255,255,0.7);
+    padding: 0;
+    border: 1px solid $black;
+  }
+
+  $toggle-spacing: 5px;
+  .nav-wrapper__toggle__items-1:before,
+  .nav-wrapper__toggle__items-1:after,
+  .nav-wrapper__toggle__items-2:before,
+  .nav-wrapper__toggle__items-2:after {
+    position: absolute;
+    width: 100%;
+    height: $toggle-spacing;
+    left: 0;
+    background-color: $grey-3;
+    content: "";
+    transition: all $default-animation;
+  }
+
+  .nav-wrapper__toggle__items-1:before { top: $toggle-spacing;  }
+  .nav-wrapper__toggle__items-1:after  { top: $toggle-spacing * 3; }
+  .nav-wrapper__toggle__items-2:before { top: $toggle-spacing * 5; }
+  .nav-wrapper__toggle__items-2:after  { top: $toggle-spacing * 7; }
 
   .nav-wrapper__highlighter {
     position: absolute;
@@ -13,6 +45,47 @@
     height: 46px;
     background-color: $black;
     z-index: -1;
-    transition: left $default-animation, width $default-animation;
+    transition: left $default-animation, width $default-animation, top $default-animation;
+  }
+
+  &.is-visible {
+    transform: translateX(0);
+
+    .nav-wrapper__toggle__items-1:before,
+    .nav-wrapper__toggle__items-1:after,
+    .nav-wrapper__toggle__items-2:before,
+    .nav-wrapper__toggle__items-2:after {
+      width: 15px;
+    }
+
+    .nav-wrapper__toggle__items-1:before {
+      top: 50%;
+      left: 50%;
+      transform: translate(0, -50%) rotate(45deg);
+      transform-origin: left;
+    }
+
+    .nav-wrapper__toggle__items-1:after  {
+      top: 50%;
+      left: 50%;
+      transform: translate(0, -50%) rotate(-45deg);
+      transform-origin: left;
+    }
+
+    .nav-wrapper__toggle__items-2:before {
+      left: initial;
+      right: 50%;
+      top: 50%;
+      transform: translate(0, -50%) rotate(45deg);
+      transform-origin: right;
+    }
+
+    .nav-wrapper__toggle__items-2:after  {
+      left: initial;
+      top: 50%;
+      right: 50%;
+      transform: translate(0, -50%) rotate(-45deg);
+      transform-origin: right;
+    }
   }
 }

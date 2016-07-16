@@ -1,8 +1,11 @@
 // atoms
 @import "atoms/cols/cols-sm";
 @import "atoms/type/type-sm";
+@import "atoms/page-wrapper/page-wrapper-sm";
 @import "atoms/project-tile/project-tile-sm";
 
 
 // molecules
 @import "molecules/projects-list/projects-list-sm";
+@import "molecules/nav-wrapper/nav-wrapper-sm";
+@import "molecules/nav/nav-sm";

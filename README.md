@@ -7,8 +7,13 @@ TODOS:
   6 - debug devise mailers and confirmations
   5 - setup inquiries to view
   11 - add responded_state to inquiries to check if inquiry has been responded to (probably not necessary)
+  4.6 - add sortable to featured projects
+  4.5 - add checkbox to projects index page for featured or not
 - CORE SITE:
   1 - style nav on mobile
   3 - contribute content
   4 - refine styles
   10 - document everything
+  1.5 - add link to projects section in home (probably the already present "Projects" word)
+- GENERAL:
+  LOW - incorporate es6 -> es5 transpiling

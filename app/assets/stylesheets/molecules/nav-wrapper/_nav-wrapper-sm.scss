@@ -1,0 +1,17 @@
+.nav-wrapper {
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  transform: translateX(0);
+
+  .nav-wrapper__toggle {
+    display: none;
+  }
+
+  .nav-wrapper__highlighter {
+    top: 0;
+    height: 46px;
+  }
+}

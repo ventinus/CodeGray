@@ -2,7 +2,7 @@
   .home__left
     .home-panel
       h1.font-open-sans.type--uppercase
-        span.type--10.font-open-sans--light Personal Portfolio Site Of
+        span.type--10.font-open-sans--light> Personal Portfolio Site Of
         br
         span.type-title Jon Gray
       .home-panel__links.font-open-sans.type--uppercase.type--8
@@ -10,8 +10,8 @@
         = link_to 'contact', '#contact', class: 'link link--white-filled js-home-link'
   .home__right
     .home-panel
-      h2.home-panel__hdg.font-open-sans.type--uppercase.type--5
-        = link_to 'Projects', '#projects', class: 'js-home-link'
+      = link_to '#projects', class: 'home-panel__hdg font-open-sans type--uppercase type--5 js-home-link' do |link|
+        h2 Featured Projects
       ul.projects-list.projects-list--home
         - @projects[0...5].each do |project|
           li.projects-list__piece.projects-list__item-1of2

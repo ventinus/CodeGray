@@ -27,13 +27,14 @@
   .home-panel__hdg {
     text-align: left;
     text-decoration: underline;
+    display: inline-block;
 
-    a,
-    a:visited {
+    &,
+    &:visited {
       color: $black;
     }
 
-    a:hover {
+    &:hover {
       color: $grey;
     }
   }

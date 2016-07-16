@@ -26,6 +26,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body data-js-class="#{front_end_body_class}"
+    h1.isVisuallyHidden The Site of Jon Gray
     = render "shared/nav/nav"
     = yield
 

@@ -10,7 +10,7 @@ TODOS:
   4.6 - add sortable to featured projects
   4.5 - add checkbox to projects index page for featured or not
 - CORE SITE:
-  1 - style nav on mobile
+X 1 - style nav on mobile
   3 - contribute content
   4 - refine styles
   10 - document everything

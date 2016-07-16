@@ -45,7 +45,9 @@ window.MODULES.siteNav = function() {
     } else {
       els.home.classList.add('is-visible');
       document.body.classList.add('no-scroll');
-      document.documentElement.classList.add('no-scroll');
+      setTimeout(function(){
+        document.documentElement.classList.add('no-scroll');
+      }, 500)
     }
 
     return;

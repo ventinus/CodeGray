@@ -25,6 +25,7 @@
         border: 0;
         background-color: $grey-1;
         transition: all $default-animation;
+        border-radius: 0;
       }
 
       .contact-form__group__input--email {
@@ -68,6 +69,11 @@
       display: block;
       margin: 25px auto 0;
     }
+  }
+
+  .contact-form__error {
+    color: $error-red;
+    margin-top: 5px;
   }
 
   .contact-success {

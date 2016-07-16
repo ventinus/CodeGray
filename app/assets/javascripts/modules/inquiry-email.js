@@ -62,7 +62,7 @@ window.MODULES.inquiryEmail = function() {
 
   var createError = function(field, message) {
     var errorEl = document.createElement('p');
-    errorEl.classList.add('form-error');
+    errorEl.classList.add('contact-form__error','type--10','font-open-sans','font-open-sans--bold');
     errorEl.innerText = message;
     fields[field].parentElement.appendChild(errorEl);
 
@@ -82,7 +82,7 @@ window.MODULES.inquiryEmail = function() {
   }
 
   var removePreviousErrors = function() {
-    var errors = els.form.querySelectorAll('.form-error');
+    var errors = els.form.querySelectorAll('.contact-form__error');
 
     for (var i = errors.length - 1; i >= 0; i--) {
       errors[i].parentElement.removeChild(errors[i]);

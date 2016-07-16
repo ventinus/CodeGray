@@ -14,6 +14,6 @@ X 1 - style nav on mobile
   3 - create content
   4 - refine styles
   10 - document everything
-  1.5 - add link to projects section in home (probably the already present "Projects" word)
+X 1.5 - add link to projects section in home (probably the already present "Projects" word)
 - GENERAL:
   LOW - incorporate es6 -> es5 transpiling

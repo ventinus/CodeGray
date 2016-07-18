@@ -1,9 +1,15 @@
 table.index-table
   thead
     th Name
+    th From
+    th Message
     th
   tbody
     - @inquiries.each do |inquiry|
       tr
         td= inquiry.name
+        td= inquiry.email
+        td= inquiry.message
+        td.text-right
+          = delete_link(inquiry)
 

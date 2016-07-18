@@ -5,7 +5,7 @@ class Admin::InquiriesController < Admin::ApplicationController
   end
 
   def destroy
-    @inquiry = Project.find(params[:id])
+    @inquiry = Inquiry.find(params[:id])
     if @inquiry.destroy
       redirect_to admin_inquiries_path, notice: "#{@inquiry.name} was deleted."
     else

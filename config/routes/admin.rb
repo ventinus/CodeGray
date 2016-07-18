@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
     resources :companies, except: :show
 
-    resources :inquiries, only: :index
+    resources :inquiries, except: [:show, :edit, :new]
 
   end
 end

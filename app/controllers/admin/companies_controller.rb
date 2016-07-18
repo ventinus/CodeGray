@@ -12,9 +12,20 @@ class Admin::CompaniesController < Admin::ApplicationController
     @company = Company.new
   end
 
+  def create
+    @company = Company.new(company_params)
+
+    if @company.save
+      redirect_to admin_companies_path, notice: 'Company successfully created.'
+    else
+      flash[:error] = 'Company was not created.'
+      render :new
+    end
+  end
+
   def update
     if @company.update(company_params)
-      redirect_to companies_path, notice: "#{@company.name} successfully updated."
+      redirect_to admin_companies_path, notice: "#{@company.name} successfully updated."
     else
       flash[:error] = 'Company was not updated.'
       render :edit
@@ -23,10 +34,10 @@ class Admin::CompaniesController < Admin::ApplicationController
 
   def destroy
     if @company.destroy
-      redirect_to companies_path, notice: "#{@company.name} was removed."
+      redirect_to admin_companies_path, notice: "#{@company.name} was removed."
     else
       flash[:error] = "company was not deleted. #{@company.errors.full_messages.to_sentence}."
-      redirect_to companies_path
+      redirect_to admin_companies_path
     end
   end
 

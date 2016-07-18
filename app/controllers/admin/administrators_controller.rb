@@ -48,7 +48,7 @@ class Admin::AdministratorsController < Admin::ApplicationController
   end
 
   def administrator_params
-    params[:administrator].permit(:first_name, :last_name, :email,
+    params[:administrator].permit(:email, :first_name, :last_name,
                                   :remember_me, :current_password,
                                   :password, :password_confirmation)
   end

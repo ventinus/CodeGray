@@ -1,6 +1,7 @@
 / TODO: add a nice button for the file and hide the default file input tag
-= form_for [:admin, @project], html: { class: 'classic-form' } do |f|
+= list_errors(@project.errors.full_messages)
 
+= form_for [:admin, @project], html: { class: 'classic-form' } do |f|
   .classic-form__field
     = f.label :name
     = f.text_field :name

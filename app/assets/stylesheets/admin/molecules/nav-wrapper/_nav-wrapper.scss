@@ -6,6 +6,7 @@
   left: 0;
   width: 100%;
   z-index: 10;
+  border-bottom: 1px solid $black;
 
   .nav-wrapper__logo {
     position: absolute;
@@ -13,7 +14,7 @@
     top: 0;
 
     .nav-wrapper__logo__img {
-      width: 45px;
+      width: 46px;
     }
   }
 }

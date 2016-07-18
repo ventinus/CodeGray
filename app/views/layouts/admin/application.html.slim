@@ -25,7 +25,7 @@ html
     = stylesheet_link_tag    'admin/application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'admin/application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  body.admin data-js-class="#{front_end_body_class}"
+  body.admin data-js-class="#{front_end_body_class}" data-js-init="#{js_init}"
     = render "admin/shared/nav/nav"
     .page-wrapper
       = yield

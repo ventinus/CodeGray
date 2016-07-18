@@ -44,10 +44,14 @@ module Admin::ApplicationHelper
   end
 
   def list_errors(errors = [])
-    content_tag(:ol) do
+    content_tag(:ol, class: 'error-list') do
       errors.each do |error|
-        concat content_tag(:li, error)
+        concat content_tag(:li, error, class: 'error-list__item')
       end
     end
+  end
+
+  def js_init
+    current_administrator.present? ? true : false
   end
 end

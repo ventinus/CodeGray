@@ -21,6 +21,7 @@ class Admin::ProjectsController < Admin::ApplicationController
     if @project.save
       redirect_to admin_projects_path, notice: 'Project successfully created.'
     else
+      flash[:error] = 'Project was not created.'
       @companies = Company.all
       render :new
     end

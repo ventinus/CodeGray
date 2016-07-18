@@ -34,4 +34,8 @@ class Project < ActiveRecord::Base
     where(published: true)
   end
 
+  def self.featured
+    where(published: true).where(featured: true).sort_by { |project| project[:featured_position] }
+  end
+
 end

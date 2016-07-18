@@ -11,3 +11,14 @@ table.index-table
           = publish_unpublish_link(project)
           = edit_link(project)
           = delete_link(project)
+
+table
+  thead
+    th Name
+    th Position
+  tbody.js-sortable-projects
+    - @projects.featured.each do |project|
+
+      tr
+        td= project.name
+        td= project.featured_position

@@ -46,7 +46,7 @@ Project.create([
     image_uid: 'https://unsplash.it/640/400',
     published: true,
     featured: true,
-    featured_position: 1,
+    featured_position: 2,
     company_id: 2
   },{
     name: 'Rotating Circle',
@@ -55,7 +55,7 @@ Project.create([
     image_uid: 'https://unsplash.it/640/400',
     published: true,
     featured: true,
-    featured_position: 2,
+    featured_position: 3,
     company_id: 2
   },{
     name: 'Constellation',
@@ -70,8 +70,9 @@ Project.create([
     url: 'http://ventinus.github.io/canvas-tree',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos totam, architecto odio magnam, esse, provident dolorem alias iusto porro sapiente quasi perspiciatis fugit! Quis totam, hic, blanditiis reprehenderit optio necessitatibus.',
     image_uid: 'https://unsplash.it/640/400',
-    published: false,
-    featured: false,
+    published: true,
+    featured: true,
+    featured_position: 1,
     company_id: 2
   }
 ])

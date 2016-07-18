@@ -18,6 +18,10 @@ class Admin::ProjectsController < Admin::ApplicationController
   def create
     @project = Project.new(project_params)
 
+    if @project.featured
+      @project.featured_position = Project.all.featured[-1].featured_position + 1
+    end
+
     if @project.save
       redirect_to admin_projects_path, notice: 'Project successfully created.'
     else
@@ -28,6 +32,10 @@ class Admin::ProjectsController < Admin::ApplicationController
   end
 
   def update
+    if @project.featured
+      @project.featured_position = Project.all.featured[-1].featured_position + 1
+    end
+
     if @project.update(project_params)
       redirect_to admin_projects_path, notice: "#{@project.name} successfully updated."
     else
@@ -53,6 +61,6 @@ class Admin::ProjectsController < Admin::ApplicationController
   def project_params
     params.require(:project).permit(:name, :url, :description,
                                     :image, :retained_image, :published,
-                                    :featured, :featured_position, :company_id)
+                                    :featured, :company_id)
   end
 end

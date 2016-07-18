@@ -13,7 +13,7 @@ section#home.is-visible
       = link_to '#projects', class: 'home-panel__hdg font-open-sans type--uppercase type--5 js-home-link' do |link|
         h2 Projects
       ul.projects-list.projects-list--home
-        - @projects[0...5].each do |project|
+        - @featured_projects.each do |project|
           li.projects-list__piece.projects-list__item-1of2
             = link_to project.url, class: 'project-tile js-project-link', target: '_blank' do |link|
               .project-tile__inner.font-open-sans.type--uppercase.type--8

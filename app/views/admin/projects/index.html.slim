@@ -2,11 +2,20 @@
 table.index-table
   thead
     th Name
+    th Featured
     th
   tbody
     - @projects.each do |project|
       tr
         td= project.name
+        td.js-featured-checkbox
+          = form_for [:admin, project], html: { class: 'isVisuallyHidden' } do |f|
+            = f.text_field :featured
+          - if project.featured
+            = check_box_tag "project_#{project.id}_featured", checked = true, {}
+          - else
+            = check_box_tag "project_#{project.id}_featured"
+
         td.text-right
           = publish_unpublish_link(project)
           = edit_link(project)
@@ -22,5 +31,5 @@ table
         td= project.name
         td= project.featured_position
         td.isVisuallyHidden
-          = form_for [:admin, project], html: { class: 'classic-form js-project-sort-form' } do |f|
+          = form_for [:admin, project], html: { class: 'js-project-sort-form' } do |f|
             = f.number_field :featured_position

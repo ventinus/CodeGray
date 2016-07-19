@@ -8,7 +8,7 @@ module Publishable
   end
 
   def unpublish
-    if self.is_a? Project
+    if self.is_a?(Project) && self.featured_position.present?
       index = self.featured_position
       featured_projects = Project.all.featured
       (index..featured_projects.length).each do |i|

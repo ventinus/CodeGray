@@ -41,11 +41,14 @@ class Admin::ProjectsController < Admin::ApplicationController
     # if setting featured to false, check if featured_position
     # is currently set and update all the Projects after it with a
     # decremented position
+    # binding.pry
     if my_params["featured"].present?
       if my_params["featured"] == "true"
         my_params["published"] = true
-        if !@project.featured_position.present?
-          my_params["featured_position"] = Project.all.featured[-1].featured_position + 1
+        unless @project.featured_position.present?
+          featured_projects = Project.all.featured
+          new_pos = featured_projects.length == 0 ? 1 : featured_projects[-1].featured_position + 1
+          my_params["featured_position"] = new_pos
         end
       else
         if @project.featured_position.present?

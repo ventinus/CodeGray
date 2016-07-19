@@ -11,8 +11,21 @@ window.ADMIN_MODULES.projectsSort = function() {
     return;
   }
 
-  var getPositions = function() {
+  var updatePositions = function(count) {
+    if (count <= 0) return;
 
+    var $form = $('.js-project-sort-form').eq(count - 1);
+    $form.find('#project_featured_position').val(count);
+    $form.parent().prev().text(count);
+
+    $.ajax({
+      url: $form.attr('action'),
+      type: 'POST',
+      data: $form.serialize(),
+      success: function() { console.log('success'); }
+    });
+
+    updatePositions(count - 1);
     return;
   }
 
@@ -25,7 +38,7 @@ window.ADMIN_MODULES.projectsSort = function() {
         top: 60
       },
       // handle: '.handle'
-      update: getPositions
+      update: updatePositions.bind(this, $('.js-project-sort-form').length)
     })
 
     return;

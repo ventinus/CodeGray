@@ -32,11 +32,35 @@ class Admin::ProjectsController < Admin::ApplicationController
   end
 
   def update
-    if @project.featured
-      @project.featured_position = Project.all.featured[-1].featured_position + 1
+    my_params = project_params
+
+    # checking to see if the user is setting the featured prop
+    # if so, automatically update published to true and then
+    # check if there is not a featured_position prop set on that
+    # project. if not, plop it at the end
+    # if setting featured to false, check if featured_position
+    # is currently set and update all the Projects after it with a
+    # decremented position
+    if my_params["featured"].present?
+      if my_params["featured"] == "true"
+        my_params["published"] = true
+        if !@project.featured_position.present?
+          my_params["featured_position"] = Project.all.featured[-1].featured_position + 1
+        end
+      else
+        if @project.featured_position.present?
+          index = @project.featured_position
+          featured_projects = Project.all.featured
+          (index..featured_projects.length).each do |i|
+            featured_projects[i - 1].featured_position -= 1
+            featured_projects[i - 1].save
+          end
+          my_params["featured_position"] = nil
+        end
+      end
     end
 
-    if @project.update(project_params)
+    if @project.update(my_params)
       redirect_to admin_projects_path, notice: "#{@project.name} successfully updated."
     else
       flash[:error] = 'Project was not updated.'
@@ -61,6 +85,6 @@ class Admin::ProjectsController < Admin::ApplicationController
   def project_params
     params.require(:project).permit(:name, :url, :description,
                                     :image, :retained_image, :published,
-                                    :featured, :company_id)
+                                    :featured, :featured_position, :company_id)
   end
 end

@@ -8,7 +8,7 @@ IP  2 - add error messages for admin form submissions
   6 - debug devise mailers and confirmations
 X 5 - setup inquiries to view
   11 - add responded_state to inquiries to check if inquiry has been responded to (probably not necessary)
-  4.6 - add sortable to featured projects
+X 4.6 - add sortable to featured projects
   4.5 - add checkbox to projects index page for featured or not
 - CORE SITE:
 X 1 - style nav on mobile

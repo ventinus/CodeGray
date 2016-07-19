@@ -18,7 +18,9 @@ table
     th Position
   tbody.js-sortable-projects
     - @projects.featured.each do |project|
-
       tr
         td= project.name
         td= project.featured_position
+        td.isVisuallyHidden
+          = form_for [:admin, project], html: { class: 'classic-form js-project-sort-form' } do |f|
+            = f.number_field :featured_position

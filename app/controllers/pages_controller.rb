@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   def index
     @projects = Project.all.published
-    @featured_projects = @projects.featured[0...5]
+    @featured_projects = @projects.featured
     @inquiry = Inquiry.new
   end
 

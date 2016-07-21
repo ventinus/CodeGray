@@ -1,8 +1,11 @@
 .section-max-width {
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
-.section-max-width--sm { max-width: 645px; }
+.section-max-width--sm {
+  max-width: 645px;
+  padding: 0 20px;
+}
 .section-max-width--md { max-width: 730px; }
 .section-max-width--lg { max-width: 905px; }

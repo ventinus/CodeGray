@@ -16,7 +16,7 @@ window.ADMIN_MODULES.projectsSort = function() {
 
     var $form = $('.js-project-sort-form').eq(count - 1);
     $form.find('#project_featured_position').val(count);
-    $form.parent().prev().text(count);
+    $form.prev().text(count);
 
     $.ajax({
       url: $form.attr('action'),
@@ -35,7 +35,7 @@ window.ADMIN_MODULES.projectsSort = function() {
       cursor: "move",
       axis: 'y',
       cursorAt: {
-        top: 60
+        top: 15
       },
       // handle: '.handle'
       update: updatePositions.bind(this, $('.js-project-sort-form').length)

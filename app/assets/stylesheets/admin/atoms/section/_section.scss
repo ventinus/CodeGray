@@ -1,0 +1,12 @@
+.section {
+  margin-top: 25px;
+  padding: 0 15px;
+
+  .section__hdg {
+    font-size: 2em;
+    font-weight: 600;
+    padding-bottom: 5px;
+    border-bottom: 2px solid $black;
+    margin-bottom: 15px;
+  }
+}

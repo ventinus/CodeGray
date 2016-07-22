@@ -1,35 +1,39 @@
 = link_to 'Create Project', new_admin_project_path, class: 'btn'
-table.index-table
-  thead
-    th Name
-    th Featured
-    th
-  tbody
-    - @projects.each do |project|
-      tr
-        td= project.name
-        td.js-featured-checkbox
-          = form_for [:admin, project], html: { class: 'isVisuallyHidden' } do |f|
-            = f.text_field :featured
-          - if project.featured
-            = check_box_tag "project_#{project.id}_featured", checked = true, {}
-          - else
-            = check_box_tag "project_#{project.id}_featured"
+section.section
+  h1.section__hdg All Projects
+  table.index-table
+    thead
+      th Name
+      th Featured
+      th
+    tbody
+      - @projects.each do |project|
+        tr
+          td= project.name
+          td.js-featured-checkbox
+            = form_for [:admin, project], html: { class: 'isVisuallyHidden' } do |f|
+              = f.text_field :featured
+            - if project.featured
+              = check_box_tag "project_#{project.id}_featured", checked = true, {}
+            - else
+              = check_box_tag "project_#{project.id}_featured"
 
-        td.text-right
-          = publish_unpublish_link(project)
-          = edit_link(project)
-          = delete_link(project)
+          td.text-right
+            = publish_unpublish_link(project)
+            = edit_link(project)
+            = delete_link(project)
 
-table
-  thead
-    th Name
-    th Position
-  tbody.js-sortable-projects
-    - @projects.featured.each do |project|
-      tr
-        td= project.name
-        td= project.featured_position
-        td.isVisuallyHidden
-          = form_for [:admin, project], html: { class: 'js-project-sort-form' } do |f|
+section.section
+  h1.section__hdg Sort Featured Projects
+  .sort-table
+    .sort-table__row.sort-table__row--head
+      p.sort-table__row__cell Name
+      p.sort-table__row__cell Position
+    .sort-table__body.js-sortable-projects
+      - @projects.featured.each do |project|
+        .sort-table__row
+          .sort-table__row__grab
+          p.sort-table__row__cell= project.name
+          p.sort-table__row__cell= project.featured_position
+          = form_for [:admin, project], html: { class: 'isVisuallyHidden js-project-sort-form' } do |f|
             = f.number_field :featured_position

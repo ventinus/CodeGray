@@ -8,7 +8,6 @@ window.ADMIN_MODULES.projectsFeature = function() {
 
   var createChildren = function() {
     els.$projFeatChecks = $('.js-featured-checkbox').find('input[type="checkbox"]')
-    console.log(els.$projFeatChecks)
     return;
   }
 

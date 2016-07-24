@@ -14,6 +14,8 @@ gem 'uglifier', '>= 1.3.0'
 #
 gem 'slim-rails'
 
+gem 'modernizr-rails'
+
 gem 'jquery-rails' # for post actions to work only in admin js
 gem 'jquery-ui-rails' # for sortable only in admin js
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

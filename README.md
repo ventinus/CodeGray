@@ -8,6 +8,7 @@ IP  2 - add error messages for admin form submissions
   6 - debug devise mailers and confirmations
   11 - add responded_state to inquiries to check if inquiry has been responded to (probably not necessary)
 - CORE SITE:
+  1 - have more details section
   3 - create content
   10 - document everything
 - GENERAL:

@@ -1,4 +1,4 @@
-#home {
+html.js #home {
   .home__left,
   .home__right {
     top: 0;
@@ -15,5 +15,17 @@
     right: 0;
     left: auto;
     transform: translate(100%, 0);
+  }
+}
+
+
+html:not(.js) #home {
+  font-size: 0;
+
+  .home__left,
+  .home__right {
+    display: inline-block;
+    width: 50%;
+    height: 100vh;
   }
 }

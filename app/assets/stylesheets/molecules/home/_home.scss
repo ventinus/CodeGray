@@ -1,4 +1,4 @@
-#home {
+html.js #home {
   position: fixed;
   top: 0;
   left: 0;
@@ -23,13 +23,11 @@
   .home__left {
     top: 0;
     transform: translate(0, -100%);
-    background-color: $grey-1;
   }
 
   .home__right {
     bottom: 0;
     transform: translate(0, 100%);
-    background-color: $white;
     overflow-y: scroll;
   }
 
@@ -38,3 +36,19 @@
     .home__right { transform: translate(0, 0); }
   }
 }
+
+html:not(.js) #home {
+  .home__left,
+  .home__right {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+  }
+}
+
+#home {
+  .home__left  { background-color: $grey-1; }
+  .home__right { background-color: $white; }
+}
+
+

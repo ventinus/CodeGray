@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       member { concerns :publishable }
     end
 
-    resources :companies, except: :show
+    resources :agencies, except: :show
 
     resources :inquiries, except: [:show, :edit, :new]
 

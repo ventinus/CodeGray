@@ -1,0 +1,12 @@
+= link_to 'Create Agency', new_admin_agency_path, class: 'btn'
+table.index-table
+  thead
+    th Name
+    th
+  tbody
+    - @agencies.each do |agency|
+      tr
+        td= agency.name
+        td.text-right
+          = edit_link(agency)
+          = delete_link(agency)

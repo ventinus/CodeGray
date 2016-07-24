@@ -7,12 +7,12 @@ class Admin::ProjectsController < Admin::ApplicationController
   end
 
   def new
-    @companies = Company.all
+    @agencies = Agency.all
     @project = Project.new
   end
 
   def edit
-    @companies = Company.all
+    @agencies = Agency.all
   end
 
   def create
@@ -26,7 +26,7 @@ class Admin::ProjectsController < Admin::ApplicationController
       redirect_to admin_projects_path, notice: 'Project successfully created.'
     else
       flash[:error] = 'Project was not created.'
-      @companies = Company.all
+      @agencies = Agency.all
       render :new
     end
   end
@@ -88,6 +88,6 @@ class Admin::ProjectsController < Admin::ApplicationController
   def project_params
     params.require(:project).permit(:name, :url, :description,
                                     :image, :retained_image, :published,
-                                    :featured, :featured_position, :company_id)
+                                    :featured, :featured_position, :agency_id)
   end
 end

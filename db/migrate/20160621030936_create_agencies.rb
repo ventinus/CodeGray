@@ -1,6 +1,6 @@
-class CreateCompanies < ActiveRecord::Migration
+class CreateAgencies < ActiveRecord::Migration
   def change
-    create_table :companies do |t|
+    create_table :agencies do |t|
       t.string :name,       null: false
       t.text :description,  null: false
       t.date :start_date,   null: false

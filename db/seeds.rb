@@ -15,9 +15,9 @@ Administrator.create({
   confirmed_at: Time.zone.now
 })
 
-puts ' -- Companies -- '
+puts ' -- Agencies -- '
 
-Company.create([
+Agency.create([
   {
     name: 'Canvas Digital Agency',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus accusantium quod odio iure dolore eligendi quasi explicabo minus quis, tempore dicta molestiae eos mollitia soluta voluptatum. Iusto, tempora cumque adipisci.',
@@ -47,7 +47,7 @@ Project.create([
     published: true,
     featured: true,
     featured_position: 2,
-    company_id: 2
+    agency_id: 2
   },{
     name: 'Rotating Circle',
     url: 'http://ventinus.github.io/circle',
@@ -56,7 +56,7 @@ Project.create([
     published: true,
     featured: true,
     featured_position: 3,
-    company_id: 2
+    agency_id: 2
   },{
     name: 'Constellation',
     url: 'http://ventinus.github.io/constellation',
@@ -64,7 +64,7 @@ Project.create([
     image_uid: 'https://unsplash.it/640/400',
     published: false,
     featured: false,
-    company_id: 2
+    agency_id: 2
   },{
     name: 'Scene',
     url: 'http://ventinus.github.io/canvas-tree',
@@ -73,6 +73,6 @@ Project.create([
     published: true,
     featured: true,
     featured_position: 1,
-    company_id: 2
+    agency_id: 2
   }
 ])

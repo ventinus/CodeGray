@@ -10,7 +10,7 @@
 #  published         :boolean          default(FALSE)
 #  featured          :boolean          default(FALSE)
 #  featured_position :integer
-#  company_id        :integer
+#  agency_id         :integer
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
@@ -18,7 +18,7 @@
 class Project < ActiveRecord::Base
   include Publishable
 
-  belongs_to :company
+  belongs_to :agency
   validates :name, presence: true
   validates :url, presence: true
   validates :description, presence: true

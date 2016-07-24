@@ -9,7 +9,7 @@ class CreateProjects < ActiveRecord::Migration
       t.boolean :featured, default: false
       t.integer :featured_position
 
-      t.references :company, index: true, foreign_key: true
+      t.references :agency, index: true, foreign_key: true
 
       t.timestamps null: false
     end

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: companies
+# Table name: agencies
 #
 #  id          :integer          not null, primary key
 #  name        :string(255)      not null
@@ -11,7 +11,7 @@
 #  updated_at  :datetime         not null
 #
 
-class Company < ActiveRecord::Base
+class Agency < ActiveRecord::Base
   has_many :projects, -> { order(date: :asc) }, dependent: :destroy
 
   validates :name, presence: true
@@ -25,7 +25,7 @@ class Company < ActiveRecord::Base
 
   def end_date_after_start_date
     if end_date <= start_date
-      errors.add(:company, 'The end date must be after the start date.')
+      errors.add(:agency, 'The end date must be after the start date.')
       return false
     end
   end

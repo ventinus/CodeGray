@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: companies
+# Table name: agencies
 #
 #  id          :integer          not null, primary key
 #  name        :string(255)      not null
@@ -13,7 +13,7 @@
 
 require 'test_helper'
 
-class CompanyTest < ActiveSupport::TestCase
+class AgencyTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -23,8 +23,8 @@
     = f.label :featured_false, 'Not Featured'
     = f.radio_button :featured, false
   .classic-form__field
-    = f.label :company_id, 'Company'
-    = f.select :company_id, options_for_select(@companies.collect{ |c| [c.name, c.id] })
+    = f.label :agency_id, 'Agency'
+    = f.select :agency_id, options_for_select(@agencies.collect{ |c| [c.name, c.id] })
 
   .actions
       = f.submit "Submit", class: 'btn btn--submit type--8'

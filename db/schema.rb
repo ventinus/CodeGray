@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20160708023826) do
   add_index "administrators", ["email"], name: "index_administrators_on_email", unique: true, using: :btree
   add_index "administrators", ["reset_password_token"], name: "index_administrators_on_reset_password_token", unique: true, using: :btree
 
-  create_table "companies", force: :cascade do |t|
+  create_table "agencies", force: :cascade do |t|
     t.string   "name",        limit: 255,   null: false
     t.text     "description", limit: 65535, null: false
     t.date     "start_date",                null: false
@@ -63,12 +63,12 @@ ActiveRecord::Schema.define(version: 20160708023826) do
     t.boolean  "published",                       default: false
     t.boolean  "featured",                        default: false
     t.integer  "featured_position", limit: 4
-    t.integer  "company_id",        limit: 4
+    t.integer  "agency_id",         limit: 4
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
   end
 
-  add_index "projects", ["company_id"], name: "index_projects_on_company_id", using: :btree
+  add_index "projects", ["agency_id"], name: "index_projects_on_agency_id", using: :btree
 
-  add_foreign_key "projects", "companies"
+  add_foreign_key "projects", "agencies"
 end

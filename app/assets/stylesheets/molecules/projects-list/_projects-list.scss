@@ -5,14 +5,19 @@
   margin-top: 5px;
 
   .projects-list__piece {
-    overflow: hidden;
-    height: 110px;
-  }
+    &:nth-child(2n + 1) .project-details__inner:after {
+      left: calc(50% + 50px);
+    }
 
+    &:nth-child(2n) .project-details__inner:after {
+      left: 50px;
+    }
+    // overflow: hidden;
+  }
 
   @each $color in $color-selections {
     $i: index($color-selections, $color);
-    .projects-list__piece:nth-child(5n + #{$i}) {
+    .projects-list__piece:nth-child(5n + #{$i}) .project-tile {
       background-color: $color;
     }
   }

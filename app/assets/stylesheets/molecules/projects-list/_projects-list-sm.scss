@@ -1,1 +1,16 @@
 @include cols(1, 3, 10px, 10px, '.projects-list', '.projects-list__item', '--sm');
+.projects-list {
+  .projects-list__piece {
+    &:nth-child(3n + 1) .project-details__inner:after {
+      left: 50px !important;
+    }
+
+    &:nth-child(3n + 2) .project-details__inner:after {
+      left: calc(33% + 50px) !important;
+    }
+
+    &:nth-child(3n) .project-details__inner:after {
+      left: calc(66% + 50px) !important;
+    }
+  }
+}

@@ -2,45 +2,47 @@ window.MODULES = window.MODULES || {};
 window.MODULES.projectLink = function() {
   var props = {
     isEnabled: false,
-    isTouchDevice: false,
-    lastIndex: -1
+    currentProject: null,
+    activeIndex: -1
   };
 
   var els = {};
-  var deviceDetector = window.UTILS.DeviceDetection();
 
   var createChildren = function() {
-    els.projectLinks = document.getElementsByClassName('js-project-link');
+    els.projects = document.getElementsByClassName('js-project');
 
     return;
   }
 
-  var onProjectLinkTouch = function(index, e) {
-    if (e.currentTarget.beenClicked && props.lastIndex === index) {
-      return
+  var onProjectClick = function(index, e) {
+    if (props.activeIndex !== -1) {
+      props.currentProject.style.height = '';
+      props.currentProject.classList.remove('is-visible');
+
+      if (index === props.activeIndex) {
+        props.activeIndex = -1;
+        props.currentProject = null;
+        return;
+      }
     }
 
-    e.preventDefault();
+    props.activeIndex = index;
+    props.currentProject = e.currentTarget.nextSibling;
 
-    // set the clicked prop of the last el
-    if (index > -1) {
-      els.projectLinks[index].beenClicked = false;
-    }
-
-    props.lastIndex = index;
-    e.currentTarget.beenClicked = true;
+    var targetHeight = props.currentProject.children[0].offsetHeight + 10;
+    props.currentProject.classList.add('is-visible');
+    props.currentProject.style.height = targetHeight + 'px';
 
     return;
   }
 
   var enable = function() {
-    if (props.isEnabled || !props.isTouchDevice) return;
+    if (props.isEnabled) return;
 
-    for (var i = els.projectLinks.length - 1; i >= 0; i--) {
+    for (var i = els.projects.length - 1; i >= 0; i--) {
       (function(index) {
-        els.projectLinks[i].addEventListener('touchend', onProjectLinkTouch.bind(this, index));
+        els.projects[i].addEventListener('click', onProjectClick.bind(this, index));
       })(i)
-      els.projectLinks[i]['beenClicked'] = false;
     }
 
     props.isEnabled = true;
@@ -48,13 +50,12 @@ window.MODULES.projectLink = function() {
   }
 
   var disable = function() {
-    if (!props.isEnabled || !props.isTouchDevice) return;
+    if (!props.isEnabled) return;
 
-    for (var i = els.projectLinks.length - 1; i >= 0; i--) {
+    for (var i = els.projects.length - 1; i >= 0; i--) {
       (function(index) {
-        els.projectLinks[i].removeEventListener('touchend', onProjectLinkTouch.bind(this, index));
+        els.projects[i].removeEventListener('click', onProjectClick.bind(this, index));
       })(i)
-      els.projectLinks[i]['beenClicked'] = null;
     }
 
     props.isEnabled = false;
@@ -63,9 +64,9 @@ window.MODULES.projectLink = function() {
 
   return {
     init: function() {
-      props.isTouchDevice = deviceDetector.isTouchDevice();
+      // props.isTouchDevice = deviceDetector.isTouchDevice();
 
-      if (!props.isTouchDevice) return;
+      // if (!props.isTouchDevice) return;
 
       createChildren();
       enable();

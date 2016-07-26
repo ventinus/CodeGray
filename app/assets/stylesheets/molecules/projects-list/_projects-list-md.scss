@@ -1,5 +1,24 @@
 @include cols(1, 4, 10px, 10px, '.projects-list', '.projects-list__item', '--md');
 
+.projects-list {
+  .projects-list__piece {
+    &:nth-child(4n + 1) .project-details__inner:after {
+      left: 50px !important;
+    }
+
+    &:nth-child(4n + 2) .project-details__inner:after {
+      left: calc(25% + 50px) !important;
+    }
+
+    &:nth-child(4n + 3) .project-details__inner:after {
+      left: calc(50% + 50px) !important;
+    }
+
+    &:nth-child(4n) .project-details__inner:after {
+      left: calc(75% + 50px) !important;
+    }
+  }
+}
 
 .projects-list--home {
   .projects-list__piece:nth-child(n + 3) {

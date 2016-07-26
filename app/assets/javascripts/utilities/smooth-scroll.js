@@ -1,3 +1,4 @@
+// TODO: rewrite with Velocity
 window.UTILS = window.UTILS || {};
 window.UTILS.SmoothScroll = function() {
   var currentYPosition = function() {

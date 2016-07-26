@@ -10,6 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require velocity.js
+//
 //= require_tree ./utilities
 //= require_tree ./modules
 //= require ./app

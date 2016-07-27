@@ -94,10 +94,10 @@ a:focus {
  * Improves readability when focused and also mouse hovered in all browsers.
  */
 
-a:active,
-a:hover {
-    outline: 0;
-}
+// a:active,
+// a:hover {
+//     outline: 0;
+// }
 
 /* ==========================================================================
    Typography
@@ -285,7 +285,7 @@ button,
 input {
     line-height: normal;
 
-    &:focus { outline: 0; }
+    // &:focus { outline: 0; }
 }
 
 button {

@@ -33,7 +33,7 @@ window.UTILS.SmoothScroll = function() {
     Velocity(el, 'scroll', {
       duration: props.duration,
       easing: props.easing,
-      offset: deviceDetection.isMobileWidth() ? 0 : -46,
+      offset: deviceDetection.isMobileWidth() ? 0 : -61, // compare to $nav-height in vars
       mobileHA: false
     })
   }

@@ -13,11 +13,19 @@
     position: absolute;
     top: 0;
     left: 100%;
-    height: 46px;
-    width: 46px;
-    background-color: rgba(255,255,255,0.7);
+    height: $nav-height;
+    width: $nav-height;
+    background-color: $kashmir-blue;
     padding: 0;
     border: 1px solid $black;
+    color: $white;
+
+    .nav-wrapper__toggle__label {
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   $toggle-spacing: 5px;
@@ -26,23 +34,23 @@
   .nav-wrapper__toggle__items-2:before,
   .nav-wrapper__toggle__items-2:after {
     position: absolute;
-    width: 100%;
+    width: calc(100% - 20px);
     height: $toggle-spacing;
-    left: 0;
-    background-color: $grey-3;
+    left: 10px;
+    background-color: $white;
     content: "";
     transition: all $default-animation;
   }
 
   .nav-wrapper__toggle__items-1:before { top: $toggle-spacing;  }
   .nav-wrapper__toggle__items-1:after  { top: $toggle-spacing * 3; }
-  .nav-wrapper__toggle__items-2:before { top: $toggle-spacing * 5; }
-  .nav-wrapper__toggle__items-2:after  { top: $toggle-spacing * 7; }
+  .nav-wrapper__toggle__items-2:before { top: $toggle-spacing * 3; }
+  .nav-wrapper__toggle__items-2:after  { top: $toggle-spacing * 5; }
 
   .nav-wrapper__highlighter {
     position: absolute;
     top: 0;
-    height: 46px;
+    height: $nav-height - 1px;
     background-color: $black;
     z-index: -1;
     transition: left $default-animation, width $default-animation, top $default-animation;
@@ -55,7 +63,7 @@
     .nav-wrapper__toggle__items-1:after,
     .nav-wrapper__toggle__items-2:before,
     .nav-wrapper__toggle__items-2:after {
-      width: 15px;
+      width: 20px;
     }
 
     .nav-wrapper__toggle__items-1:before {
@@ -87,5 +95,7 @@
       transform: translate(0, -50%) rotate(-45deg);
       transform-origin: right;
     }
+
+    .nav-wrapper__toggle__label { @include isVisuallyHidden(); }
   }
 }

@@ -210,7 +210,6 @@ select {
   -webkit-appearance: none;
   border: 0;
   border-radius: 0;
-  outline: none;
 }
 
 select::-ms-expand {
@@ -220,7 +219,7 @@ select::-ms-expand {
 input[type=search]::-ms-clear,
 input[type=search]::-ms-reveal {
   display: none;
-height: 0;
+  height: 0;
   width: 0;
 }
 
@@ -258,7 +257,7 @@ select:-moz-focusring {
   text-shadow: 0 0 0 #000;
 }
 
-a, div, span, p, em, strong, a:focus {
+a, div, span, p, em, strong {
   outline: none !important;
   -moz-outline: none !important;
 }

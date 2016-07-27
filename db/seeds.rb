@@ -43,40 +43,40 @@ Project.create([
     name: "Slip 'n Slider",
     url: 'http://ventinus.github.io/slipnslider',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius vel sequi consequuntur et at. Consectetur eaque laudantium nemo soluta optio id culpa quod dolores eum, cumque quo alias vel ratione.',
-    image_uid: 'https://unsplash.it/640/400',
+    image_uid: '2016/07/27/02/58/52/7bc2cddb-76fb-46a1-81ad-49841628e096/slipnslider.gif',
     published: true,
     featured: true,
     featured_position: 2,
-    agency_id: 2,
-    date_worked: 2016
+    agency_id: 2
+    # date_worked: 2016
   },{
     name: 'Rotating Circle',
     url: 'http://ventinus.github.io/circle',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium earum, maiores consequuntur ducimus rerum nam adipisci id, quia, dicta corrupti, doloribus nisi ab. Ipsa labore ad voluptas, magnam consequatur explicabo.',
-    image_uid: 'https://unsplash.it/640/400',
+    image_uid: '2016/07/27/02/59/06/233fb5cb-331d-49c2-a7d3-12cbfa082901/circle.gif',
     published: true,
     featured: true,
     featured_position: 3,
-    agency_id: 2,
-    date_worked: 2016
+    agency_id: 2
+    # date_worked: 2016
   },{
     name: 'Constellation',
     url: 'http://ventinus.github.io/constellation',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, ducimus quos porro. Recusandae deserunt sequi, dolorem quod eligendi voluptates blanditiis repellendus porro, commodi, veritatis exercitationem animi? Asperiores totam voluptas perspiciatis.',
-    image_uid: 'https://unsplash.it/640/400',
+    image_uid: '2016/07/27/02/59/20/742f798d-68cc-4605-a6e4-045c370c8ff2/constellation.gif',
     published: false,
     featured: false,
-    agency_id: 2,
-    date_worked: 2016
+    agency_id: 2
+    # date_worked: 2016
   },{
     name: 'Scene',
     url: 'http://ventinus.github.io/canvas-tree',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos totam, architecto odio magnam, esse, provident dolorem alias iusto porro sapiente quasi perspiciatis fugit! Quis totam, hic, blanditiis reprehenderit optio necessitatibus.',
-    image_uid: 'https://unsplash.it/640/400',
+    image_uid: '2016/07/27/02/59/32/6cd2b5c1-34a1-466c-824c-073f9d4b86aa/scene.gif',
     published: true,
     featured: true,
     featured_position: 1,
-    agency_id: 2,
-    date_worked: 2016
+    agency_id: 2
+    # date_worked: 2016
   }
 ])

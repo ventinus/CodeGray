@@ -6,11 +6,11 @@
 
   .projects-list__piece {
     &:nth-child(2n + 1) .project-details__inner:after {
-      left: calc(50% + 50px);
+      left: 50px;
     }
 
     &:nth-child(2n) .project-details__inner:after {
-      left: 50px;
+      left: calc(50% + 50px);
     }
     // overflow: hidden;
   }

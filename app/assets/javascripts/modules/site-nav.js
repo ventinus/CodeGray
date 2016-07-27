@@ -197,8 +197,8 @@ window.MODULES.siteNav = function() {
 
     els.mobileNavToggle.addEventListener('click', onToggleClick);
 
-    props.resizeHandler = window.UTILS.Throttle(onResize, 100)
-    props.scrollHandler = window.UTILS.Throttle(onScroll, 100)
+    props.resizeHandler = window.UTILS.Throttle(onResize, 100);
+    props.scrollHandler = window.UTILS.Throttle(onScroll, 100);
 
     window.addEventListener('resize', props.resizeHandler);
     window.addEventListener('scroll', props.scrollHandler);

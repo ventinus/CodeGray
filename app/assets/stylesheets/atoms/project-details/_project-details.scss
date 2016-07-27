@@ -1,8 +1,9 @@
 .project-details {
-  transition: height $default-animation;
   height: 0;
   overflow: hidden;
   opacity: 0;
+  position: relative;
+  width: calc(200% + 30px);
 
   .project-details__inner {
     padding: 15px;

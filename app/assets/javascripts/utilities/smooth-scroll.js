@@ -1,6 +1,13 @@
 // TODO: rewrite with Velocity
 window.UTILS = window.UTILS || {};
 window.UTILS.SmoothScroll = function() {
+  var props = {
+    easing: 'ease-in-out',
+    duration: 300
+  };
+
+  var deviceDetection = window.UTILS.DeviceDetection();
+
   var currentYPosition = function() {
     // Firefox, Chrome, Opera, Safari
     if (self.pageYOffset) return self.pageYOffset;
@@ -23,34 +30,12 @@ window.UTILS.SmoothScroll = function() {
   }
 
   var scrollTo = function(el) {
-    var startY = currentYPosition();
-    var stopY = elmYPosition(el);
-    var distance = stopY > startY ? stopY - startY : startY - stopY;
-    if (distance < 100) {
-      scrollTo(0, stopY);
-      return;
-    }
-    var speed = 15;
-    var step = Math.round(distance / 25);
-    var leapY = stopY > startY ? startY + step : startY - step;
-    var timer = 0;
-    if (stopY > startY) {
-      for (var i = startY; i < stopY; i += step) {
-        setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
-        leapY += step;
-        if (leapY > stopY) leapY = stopY;
-        timer++;
-      }
-      return;
-    }
-    for (var i = startY; i > stopY; i -= step) {
-      setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
-      leapY -= step;
-      if (leapY < stopY) leapY = stopY;
-      timer++;
-    }
-
-    return false;
+    Velocity(el, 'scroll', {
+      duration: props.duration,
+      easing: props.easing,
+      offset: deviceDetection.isMobileWidth() ? 0 : -46,
+      mobileHA: false
+    })
   }
 
   return {

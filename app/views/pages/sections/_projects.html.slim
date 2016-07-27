@@ -12,6 +12,9 @@ section#projects.main-section.js-full-section
                 = image_tag project.image.remote_url, class: 'project-tile__inner__img'
             .project-details.js-project-deets
               .project-details__inner
+                button.btn-close.js-project-close type="button"
+                  span.btn-close__inner
+                  span.isVisuallyHidden close project details
                 = link_to project.name, project.url, class: 'project-details--title'
                 p = project.description
                 p = project.description

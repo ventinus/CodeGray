@@ -22,6 +22,7 @@ window.MODULES.projectLink = function() {
     els.projects = document.getElementsByClassName('js-project');
     els.projectDeets = document.getElementsByClassName('js-project-deets');
     els.maxWidth = document.querySelector('.js-max-width-lg');
+    els.projectClosers = document.querySelectorAll('.js-project-close');
 
     return;
   }
@@ -57,6 +58,14 @@ window.MODULES.projectLink = function() {
     for (var i = els.projects.length - 1; i >= 0; i--) {
       els.projects[i]['row'] = Math.floor(i/props.rowAssignments[props.currentBreakpoint]);
     }
+
+    return;
+  }
+
+  var onProjectClose = function(e) {
+    collapse(props.currentProject);
+    props.activeIndex = -1;
+    props.currentProject = null;
 
     return;
   }
@@ -136,6 +145,10 @@ window.MODULES.projectLink = function() {
       })(i)
     }
 
+    for (var i = els.projectClosers.length - 1; i >= 0; i--) {
+      els.projectClosers[i].addEventListener('click', onProjectClose)
+    }
+
     props.resizeHandler = window.UTILS.Throttle(onResize, 100);
 
     window.addEventListener('resize', props.resizeHandler);
@@ -151,6 +164,10 @@ window.MODULES.projectLink = function() {
       (function(index) {
         els.projects[i].removeEventListener('click', onProjectClick.bind(this, index));
       })(i)
+    }
+
+    for (var i = els.projectClosers.length - 1; i >= 0; i--) {
+      els.projectClosers[i].removeEventListener('click', onProjectClose)
     }
 
     window.addEventListener('resize', props.resizeHandler);

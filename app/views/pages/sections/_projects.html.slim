@@ -5,7 +5,7 @@ section#projects.main-section.js-full-section
     ul.projects-list
       - 5.times do
         - @projects.each do |project|
-          li.projects-list__piece.projects-list__item-1of2.projects-list__item-1of3--sm.projects-list__item-1of4--md
+          li.projects-list__piece.projects-list__item-1of2.projects-list__item-1of3--sm.projects-list__item-1of4--md id="#{project.name.downcase.gsub(/[']/, '').gsub(/\s/, '-')}"
             .project-tile.js-project
               .project-tile__inner.font-open-sans.type--uppercase.type--8
                 p.project-tile__inner__text = project.name

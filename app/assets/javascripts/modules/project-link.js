@@ -1,7 +1,6 @@
 window.MODULES = window.MODULES || {};
 window.MODULES.projectLink = function() {
   var deviceDetection = window.UTILS.DeviceDetection();
-  var smoothScroll = window.UTILS.SmoothScroll();
 
   var props = {
     isEnabled: false,
@@ -48,7 +47,7 @@ window.MODULES.projectLink = function() {
 
     if (props.currentProject) {
       var targetHeight = props.currentProject.children[0].offsetHeight + 10;
-      props.currentProject.offsetHeight = targetHeight + 'px';
+      props.currentProject.style.height = targetHeight + 'px';
     }
 
     return;
@@ -62,25 +61,28 @@ window.MODULES.projectLink = function() {
     return;
   }
 
-  var expand = function(el) {
+  var expand = function(el, duration) {
+    var transitionDuration = duration || props.duration;
     el.classList.add('is-visible');
     var targetHeight = el.children[0].offsetHeight + 10;
 
     Velocity(el, {
       height: targetHeight,
       easing: props.easing
-    }, props.duration);
+    }, transitionDuration);
 
     return;
   }
 
-  var collapse = function(el, callback) {
+  var collapse = function(el, duration) {
+    var transitionDuration = duration || props.duration;
+
     Velocity(el, {
       height: 0,
       easing: props.easing
-    }, props.duration).then(function() {
+    }, transitionDuration).then(function() {
       el.classList.remove('is-visible');
-    }).then(callback);
+    });
 
     return;
   }
@@ -88,11 +90,9 @@ window.MODULES.projectLink = function() {
   var swapProjects = function(newProjectParent) {
     // if in same row
     if (props.currentProject.previousElementSibling.row == newProjectParent.row) {
-      collapse(props.currentProject, function() {
-        props.currentProject = newProjectParent.nextSibling;
-        expand(props.currentProject);
-        smoothScroll.scrollTo(newProjectParent);
-      });
+      collapse(props.currentProject, '0s');
+      props.currentProject = newProjectParent.nextSibling;
+      expand(props.currentProject, '0s');
 
     // in different rows
     } else {
@@ -100,7 +100,7 @@ window.MODULES.projectLink = function() {
       props.currentProject = newProjectParent.nextSibling;
       expand(props.currentProject);
     }
-    // debugger
+
     return;
   }
 

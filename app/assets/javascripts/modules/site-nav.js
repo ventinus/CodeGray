@@ -19,7 +19,7 @@ window.MODULES.siteNav = function() {
   var createChildren = function() {
     els.home = document.getElementById('home');
     els.homePanels = els.home.children;
-    els.homeLinks = els.home.querySelectorAll('.js-home-link')
+    els.homeLinks = els.home.querySelectorAll('.js-home-link, .js-project-link');
     els.nav = document.getElementsByClassName('js-main-nav')[0];
     els.navLinks = els.nav.querySelectorAll('a');
     els.highlighter = document.getElementsByClassName('js-nav-highlighter')[0];
@@ -63,6 +63,7 @@ window.MODULES.siteNav = function() {
     e.preventDefault();
     var target = document.querySelector(e.currentTarget.hash);
     smoothScroll.scrollTo(target);
+
     return;
   }
 

@@ -11,11 +11,11 @@ section#projects.main-section.js-full-section
                 p.project-tile__inner__text = project.name
                 = image_tag project.image.remote_url, class: 'project-tile__inner__img'
             .project-details.js-project-deets
-              .project-details__inner
-                button.btn-close.js-project-close type="button"
+              .project-details__inner.font-jura
+                button.btn-close.btn-close--white.js-project-close type="button"
                   span.btn-close__inner
                   span.isVisuallyHidden close project details
-                = link_to project.name, project.url, class: 'project-details--title'
-                p = project.description
-                p = project.description
-                p = project.description
+                = link_to project.name, project.url, class: 'project-details__title type--3'
+                p.type--7 = project.description
+                p.type--7 = project.description
+                p.type--7 = project.description

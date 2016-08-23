@@ -18,16 +18,23 @@
       height: 25px;
       background-color: $black;
       top: 50%;
-    }
-
-    &:before {
       left: 50%;
-      transform: translate(-50%, -50%) rotate(-45deg);
     }
 
+    &:before { transform: translate(-50%, -50%) rotate(-45deg); }
+    &:after  { transform: translate(-50%, -50%) rotate(45deg); }
+  }
+}
+
+
+.btn-close--white {
+  background-color: $grey-2;
+
+  .btn-close__inner {
+    &:before,
     &:after {
-      right: 50%;
-      transform: translate(-50%, -50%) rotate(45deg);
+      background-color: $white;
+      width: 2px;
     }
   }
 }

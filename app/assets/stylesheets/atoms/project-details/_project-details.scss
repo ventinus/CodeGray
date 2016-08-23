@@ -7,30 +7,15 @@
 
   .project-details__inner {
     padding: 15px;
-    border: 1px solid $black;
-    border-top: none;
-    background-color: $white;
+    background-color: $grey-2;
+    color: $white;
     position: absolute;
     left: 10px;
     right: 10px;
     z-index: -1;
 
-    &:before {
-      height: 1px;
-      content: "";
-      background-color: $black;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-    }
-
     &:after {
-      border-top: 1px solid $black;
-      border-left: 1px solid $black;
-      border-right: 1px solid $transparent;
-      border-bottom: 1px solid $transparent;
-      background-color: $white;
+      background-color: $grey-2;
       position: absolute;
       content: "";
       display: block;
@@ -40,6 +25,13 @@
       height: 10px;
       transform: translateY(-50%) rotate(45deg)
     }
+  }
+
+  .project-details__title {
+    color: $white;
+
+    &:visited { color: $white; }
+    &:hover   { color: $grey; }
   }
 
   &.is-visible {

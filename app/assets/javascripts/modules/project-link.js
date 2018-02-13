@@ -23,8 +23,6 @@ window.MODULES.projectLink = function() {
     els.projectDeets = document.getElementsByClassName('js-project-deets');
     els.maxWidth = document.querySelector('.js-max-width-lg');
     els.projectClosers = document.querySelectorAll('.js-project-close');
-
-    return;
   }
 
   var onResize = function(e) {
@@ -35,8 +33,6 @@ window.MODULES.projectLink = function() {
 
     props.currentBreakpoint = checkBP;
     assignRows();
-
-    return
   }
 
   var resizeDeets = function() {
@@ -50,24 +46,18 @@ window.MODULES.projectLink = function() {
       var targetHeight = props.currentProject.children[0].offsetHeight + 10;
       props.currentProject.style.height = targetHeight + 'px';
     }
-
-    return;
   }
 
   var assignRows = function() {
     for (var i = els.projects.length - 1; i >= 0; i--) {
       els.projects[i]['row'] = Math.floor(i/props.rowAssignments[props.currentBreakpoint]);
     }
-
-    return;
   }
 
   var onProjectClose = function(e) {
     collapse(props.currentProject);
     props.activeIndex = -1;
     props.currentProject = null;
-
-    return;
   }
 
   var expand = function(el, duration) {
@@ -79,8 +69,6 @@ window.MODULES.projectLink = function() {
       height: targetHeight,
       easing: props.easing
     }, transitionDuration);
-
-    return;
   }
 
   var collapse = function(el, duration) {
@@ -109,8 +97,6 @@ window.MODULES.projectLink = function() {
       props.currentProject = newProjectParent.nextSibling;
       expand(props.currentProject);
     }
-
-    return;
   }
 
   var onProjectClick = function(index, e) {
@@ -132,8 +118,6 @@ window.MODULES.projectLink = function() {
         swapProjects(e.currentTarget);
       }
     }
-
-    return;
   }
 
   var enable = function() {
@@ -173,7 +157,6 @@ window.MODULES.projectLink = function() {
     window.addEventListener('resize', props.resizeHandler);
 
     props.isEnabled = false;
-    return;
   }
 
   return {
@@ -186,7 +169,6 @@ window.MODULES.projectLink = function() {
       resizeDeets();
       assignRows();
       enable();
-      return;
     },
     enable: enable,
     disable: disable

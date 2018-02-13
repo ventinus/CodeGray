@@ -22,8 +22,6 @@ window.ADMIN_MODULES.projectsFeature = function() {
       data: $form.serialize(),
       success: function() { window.location.reload(); }
     });
-
-    return;
   }
 
 
@@ -33,7 +31,6 @@ window.ADMIN_MODULES.projectsFeature = function() {
     els.$projFeatChecks.on('change', updateFeatured);
 
     props.isEnabled = true;
-    return;
   }
 
   var disable = function() {
@@ -42,14 +39,12 @@ window.ADMIN_MODULES.projectsFeature = function() {
     els.$projFeatChecks.off('change', updateFeatured);
 
     props.isEnabled = false;
-    return;
   }
 
   return {
     init: function() {
       createChildren();
       enable();
-      return;
     },
     enable: enable,
     disable: disable

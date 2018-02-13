@@ -40,7 +40,6 @@ window.MODULES.inquiryEmail = function() {
     fields.email = els.form.querySelector('#inquiry_email');
     fields.name = els.form.querySelector('#inquiry_name');
     fields.message = els.form.querySelector('#inquiry_message');
-    return;
   }
 
   var onSubmit = function(e) {
@@ -57,7 +56,6 @@ window.MODULES.inquiryEmail = function() {
     }
 
     sendData();
-    return;
   }
 
   var createError = function(field, message) {
@@ -65,8 +63,6 @@ window.MODULES.inquiryEmail = function() {
     errorEl.classList.add('contact-form__error','type--10','font-open-sans','font-open-sans--bold');
     errorEl.innerText = message;
     fields[field].parentElement.appendChild(errorEl);
-
-    return;
   }
 
   var validateForm = function() {
@@ -110,7 +106,6 @@ window.MODULES.inquiryEmail = function() {
 
     var data = new FormData(els.form);
     xmlhttp.send(data);
-    return;
   }
 
   var onSuccess = function(e) {
@@ -121,12 +116,10 @@ window.MODULES.inquiryEmail = function() {
       els.form.parentElement.removeChild(els.form);
       els.successMessage.style.opacity = 1;
     }, 350)
-    return;
   }
 
   var onError = function(e) {
     console.log('error');
-    return;
   }
 
 
@@ -135,7 +128,6 @@ window.MODULES.inquiryEmail = function() {
 
     els.form.addEventListener('submit', onSubmit)
     props.isEnabled = true;
-    return;
   }
 
   var disable = function() {
@@ -144,14 +136,12 @@ window.MODULES.inquiryEmail = function() {
     els.form.removeEventListener('submit', onSubmit)
 
     props.isEnabled = false;
-    return;
   }
 
   return {
     init: function() {
       createChildren();
       enable();
-      return;
     },
     enable: enable,
     disable: disable

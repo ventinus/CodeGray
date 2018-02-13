@@ -15,8 +15,6 @@ window.MODULES.sectionHeight = function() {
     for (var i = els.sections.length - 1; i >= 0; i--) {
       els.sections[i].style.minHeight = windowHeight;
     }
-
-    return;
   }
 
   var enable = function() {
@@ -27,7 +25,6 @@ window.MODULES.sectionHeight = function() {
     window.addEventListener('resize', resizeSections);
 
     props.isEnabled = true;
-    return;
   }
 
   var disable = function() {
@@ -36,7 +33,6 @@ window.MODULES.sectionHeight = function() {
     window.removeEventListener('resize', resizeSections);
 
     props.isEnabled = false;
-    return;
   }
 
   return {

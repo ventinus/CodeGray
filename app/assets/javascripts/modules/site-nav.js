@@ -26,7 +26,6 @@ window.MODULES.siteNav = function() {
     els.anchorLinks = document.getElementsByClassName('js-smooth-anchor');
     els.mobileNavToggle = document.getElementsByClassName('js-nav-toggle')[0];
     els.navWrapper = document.querySelector('.js-nav-wrapper');
-    return;
   }
 
   var onNavLinkClick = function(e) {
@@ -49,22 +48,17 @@ window.MODULES.siteNav = function() {
         document.documentElement.classList.add('no-scroll');
       }, 500)
     }
-
-    return;
   }
 
   var onToggleClick = function(e) {
     var action = els.navWrapper.classList.contains('is-visible') ? 'remove' : 'add';
     els.navWrapper.classList[action]('is-visible');
-    return;
   }
 
   var onAnchorLinkClick = function(e) {
     e.preventDefault();
     var target = document.querySelector(e.currentTarget.hash);
     smoothScroll.scrollTo(target);
-
-    return;
   }
 
   var onHomeLinkClick = function(e) {
@@ -95,7 +89,6 @@ window.MODULES.siteNav = function() {
     setTimeout(function() {
       props.wasNavTriggered = false;
     }, 500)
-    return
   }
 
 
@@ -104,8 +97,6 @@ window.MODULES.siteNav = function() {
 
     getActiveSection();
     setActiveNavItem();
-
-    return;
   }
 
   var onResize = function(e) {
@@ -114,7 +105,6 @@ window.MODULES.siteNav = function() {
     props.triggerOffset = getTriggerOffset();
     measureOffsets();
     setActiveNavItem();
-    return;
   }
 
   var removeHomeElsTransition = function() {
@@ -127,7 +117,6 @@ window.MODULES.siteNav = function() {
         els.homePanels[i].classList.remove('no-transition');
       }
     }, 800)
-    return;
   }
 
 
@@ -163,8 +152,6 @@ window.MODULES.siteNav = function() {
 
     if (props.currentLink) props.currentLink.classList.remove('is-active');
     props.currentLink = els.navLinks[props.activeScrollPoint + 1];
-
-    return
   }
 
   var setActiveNavItem = function(newEl) {
@@ -177,8 +164,6 @@ window.MODULES.siteNav = function() {
     els.highlighter.style.left = props.currentLink.offsetLeft + 'px';
     els.highlighter.style.top = props.currentLink.offsetTop + 'px';
     els.highlighter.style.width = props.currentLink.offsetWidth + 'px';
-
-    return;
   }
 
   var enable = function() {
@@ -208,7 +193,6 @@ window.MODULES.siteNav = function() {
     document.documentElement.classList.add('no-scroll');
 
     props.isEnabled = true;
-    return;
   }
 
   var disable = function() {
@@ -232,7 +216,6 @@ window.MODULES.siteNav = function() {
     window.removeEventListener('scroll', props.scrollHandler);
 
     props.isEnabled = false;
-    return;
   }
 
   return {
@@ -242,7 +225,6 @@ window.MODULES.siteNav = function() {
       getActiveSection();
       setActiveNavItem();
       enable();
-      return;
     },
     enable: enable,
     disable: disable

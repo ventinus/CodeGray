@@ -1,8 +1,3 @@
 Rails.application.routes.draw do
-
-  # get '/' => 'pages#index'
-  root :controller => 'pages', :action => 'index'
-
-  resources :inquiries, only: [:create]
-
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -8,7 +8,6 @@ window.ADMIN_MODULES.projectsSort = function() {
 
   var createChildren = function() {
     els.$projectsSort = $('.js-sortable-projects')
-    return;
   }
 
   var updatePositions = function(count) {
@@ -26,7 +25,6 @@ window.ADMIN_MODULES.projectsSort = function() {
     });
 
     updatePositions(count - 1);
-    return;
   }
 
   var initSortable = function() {
@@ -40,23 +38,18 @@ window.ADMIN_MODULES.projectsSort = function() {
       // handle: '.handle'
       update: updatePositions.bind(this, $('.js-project-sort-form').length)
     })
-
-    return;
   }
 
   var enable = function() {
     if (props.isEnabled) return;
 
-
     props.isEnabled = true;
-    return;
   }
 
   var disable = function() {
     if (!props.isEnabled) return;
 
     props.isEnabled = false;
-    return;
   }
 
   return {
@@ -64,7 +57,6 @@ window.ADMIN_MODULES.projectsSort = function() {
       createChildren();
       initSortable();
       enable();
-      return;
     },
     enable: enable,
     disable: disable
